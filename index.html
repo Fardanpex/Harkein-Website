@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>HARKEIN | Real Estate & Fashion</title>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --blue: #003366;
+      --cream: #f5f5dc;
+      --red: #cc0000;
+    }
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      font-family: 'Roboto', sans-serif;
+    }
+    body {
+      background-color: var(--cream);
+      color: #333;
+      line-height: 1.6;
+    }
+    header {
+      background-color: var(--blue);
+      color: white;
+      padding: 1rem 2rem;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      align-items: center;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+    }
+    .logo-placeholder {
+      width: 150px;
+      height: 50px;
+      background-color: white;
+      color: var(--blue);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: bold;
+      font-size: 1.2rem;
+    }
+    nav {
+      display: flex;
+      flex-wrap: wrap;
+    }
+    nav a {
+      color: white;
+      margin-left: 1.5rem;
+      text-decoration: none;
+      font-weight: 500;
+      transition: color 0.3s ease;
+    }
+    nav a:hover {
+      color: var(--red);
+    }
+    .hero {
+      background: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)), url('https://via.placeholder.com/1600x600') no-repeat center/cover;
+      color: white;
+      text-align: center;
+      padding: 5rem 2rem;
+    }
+    .hero h1 {
+      font-size: 3rem;
+      margin-bottom: 0.5rem;
+    }
+    .hero p {
+      font-size: 1.5rem;
+    }
+    .section {
+      padding: 3rem 2rem;
+      max-width: 1200px;
+      margin: auto;
+    }
+    .section h2 {
+      color: var(--blue);
+      margin-bottom: 1rem;
+      border-bottom: 3px solid var(--red);
+      display: inline-block;
+      padding-bottom: 0.3rem;
+      margin-bottom: 2rem;
+    }
+    .contact-form {
+      display: grid;
+      gap: 1rem;
+      max-width: 600px;
+    }
+    .contact-form input, .contact-form textarea {
+      padding: 0.75rem;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+      font-size: 1rem;
+      resize: vertical;
+    }
+    .contact-form button {
+      background-color: var(--red);
+      color: white;
+      padding: 0.75rem;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      font-weight: 600;
+      font-size: 1rem;
+    }
+    .contact-form button:hover {
+      background-color: #990000;
+    }
+    footer {
+      background-color: var(--blue);
+      color: white;
+      text-align: center;
+      padding: 2rem;
+      margin-top: 2rem;
+      font-size: 0.9rem;
+    }
+    .blog-posts {
+      display: grid;
+      gap: 1.5rem;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    }
+    .blog-post {
+      background: white;
+      border: 1px solid #ddd;
+      padding: 1rem;
+      border-radius: 6px;
+    }
+    .blog-post h3 {
+      margin-bottom: 0.5rem;
+      color: var(--blue);
+    }
+    .testimonials {
+      max-width: 800px;
+      margin: auto;
+      display: flex;
+      flex-direction: column;
+      gap: 1.5rem;
+    }
+    .testimonial {
+      background: white;
+      padding: 1.5rem;
+      border-radius: 8px;
+      box-shadow: 0 0 7px rgba(0,0,0,0.1);
+      font-style: italic;
+      position: relative;
+    }
+    .testimonial::before {
+      content: '“';
+      font-size: 3rem;
+      color: var(--red);
+      position: absolute;
+      top: -10px;
+      left: 15px;
+      font-weight: bold;
+    }
+    .testimonial .author {
+      font-weight: bold;
+      text-align: right;
+      color: var(--blue);
+    }
+    #map {
+      width: 100%;
+      height: 300px;
+      border: 1px solid #ccc;
+      border-radius: 6px;
+      margin-top: 1rem;
+    }
+    #live-chat {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      background-color: var(--red);
+      color: white;
+      padding: 0.75rem 1.5rem;
+      border-radius: 30px;
+      cursor: pointer;
+      font-weight: 700;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.3);
+    }
+    #live-chat:hover {
+      background-color: #990000;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="logo-placeholder">LOGO</div>
+    <nav>
+      <a href="#home">Home</a>
+      <a href="#about">About</a>
+      <a href="#real-estate">Real Estate</a>
+      <a href="#fashion">Fashion</a>
+      <a href="#blog">Blog</a>
+      <a href="#testimonials">Testimonials</a>
+      <a href="#contact">Contact</a>
+    </nav>
+  </header>
+
+  <section class="hero" id="home">
+    <h1>Welcome to HARKEIN</h1>
+    <p>Where Real Estate meets Fashion</p>
+  </section>
+
+  <section class="section" id="about">
+    <h2>About HARKEIN</h2>
+    <p>HARKEIN is a modern company that blends two dynamic industries: Real Estate and Fashion. We offer exquisite properties and stylish clothing that reflect taste and elegance.</p>
+  </section>
+
+  <section class="section" id="real-estate">
+    <h2>Our Real Estate Services</h2>
+    <p>We provide premium real estate services including property sales, rentals, management, and investment opportunities.</p>
+  </section>
+
+  <section class="section" id="fashion">
+    <h2>Our Fashion Line</h2>
+    <p>Explore our unique fashion collection tailored for elegance and contemporary style for all genders and ages.</p>
+  </section>
+
+  <section class="section" id="blog">
+    <h2>Latest Blog Posts</h2>
+    <div class="blog-posts">
+      <article class="blog-post">
+        <h3>New Real Estate Trends in 2025</h3>
+        <p>Stay updated with the latest trends transforming the real estate market this year.</p>
+      </article>
+      <article class="blog-post">
+        <h3>Fashion Tips for Spring</h3>
+        <p>Discover the must-have styles to refresh your wardrobe this spring season.</p>
+      </article>
+      <article class="blog-post">
+        <h3>Investing in Property: What You Need to Know</h3>
+        <p>Learn the essentials of property investment from our experts.</p>
+      </article>
+    </div>
+  </section>
+
+  <section class="section" id="testimonials">
+    <h2>What Our Customers Say</h2>
+    <div class="testimonials">
+      <div class="testimonial">
+        <p>HARKEIN helped me find the perfect home. Their service was professional and attentive throughout the process.</p>
+        <div class="author">- Emily R.</div>
+      </div>
+      <div class="testimonial">
+        <p>The fashion collection is outstanding. High-quality and stylish – I always get compliments on my outfits.</p>
+        <div class="author">- Marcus T.</div>
+      </div>
+      <div class="testimonial">
+        <p>I highly recommend HARKEIN for anyone looking for trusted real estate advice and excellent fashion products.</p>
+        <div class="author">- Sarah K.</div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="contact">
+    <h2>Contact Us</h2>
+    <p>Find us at our office or send us a message using the form below.</p>
+    <div id="map"></div>
+    <form action="https://formsubmit.co/folaranmihussein@gmail.com" method="POST" class="contact-form">
+      <input type="text" name="name" placeholder="Your Name" required />
+      <input type="email" name="email" placeholder="Your Email" required />
+      <textarea name="message" rows="5" placeholder="Your Message" required></textarea>
+      <button type="submit">Send Message</button>
+    </form>
+  </section>
+
+  <div id="live-chat" onclick="alert('Live chat will be integrated here!')">Live Chat</div>
+
+  <footer>
+    <p>&copy; 2025 HARKEIN. All rights reserved.</p>
+  </footer>
+
+  <script>
+    function initMap() {
+      const officeLocation = { lat: 40.7128, lng: -74.0060 };
+      const map = new google.maps.Map(document.getElementById("map"), {
+        zoom: 12,
+        center: officeLocation,
+      });
+      new google.maps.Marker({
+        position: officeLocation,
+        map: map,
+        title: "HARKEIN Office",
+      });
+    }
+  </script>
+  <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBeOLlFxrfB_Qycj_vYLHrwRZ3VD0pfiP8&callback=initMap"></script>
+</body>
+</html>
