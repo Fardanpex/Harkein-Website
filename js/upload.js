@@ -12,12 +12,12 @@ const cancelBtn = document.getElementById("cancelBtn");
 let formDataGlobal = null; // store form data temporarily
 
 // GitHub repo info – replace with your own
-const REPO_OWNER = "YOUR_GITHUB_USERNAME";
-const REPO_NAME = "YOUR_REPO_NAME";
+const REPO_OWNER = "Fardanpex";
+const REPO_NAME = "Harkein-Website";
 const DATA_FILE_PATH = "js/data.js";
 const IMAGE_FOLDER = "images/";
 const BRANCH = "main";
-const GITHUB_TOKEN = "YOUR_PERSONAL_ACCESS_TOKEN";
+const GITHUB_TOKEN = "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";
 
 // Image preview
 imageInput.addEventListener("change", () => {
