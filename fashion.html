@@ -29,7 +29,7 @@
     <a href="index.html" class="back">← Back to Home</a>
   </header>
 
-  <section class="grid">
+  <section class="grid" id="fashionGrid">
     <div class="card">
       <img src="https://images.unsplash.com/photo-1541099649105-f69ad21f3246?auto=format&fit=crop&w=800&q=80" alt="Designer Tuxedo">
       <div class="card-body">
@@ -70,5 +70,28 @@
       </div>
     </div>
   </section>
+
+  <!-- 🟢 Dynamic data script starts -->
+  <script src="js/data.js"></script>
+  <script>
+    if (typeof fashionData !== 'undefined' && fashionData.length > 0) {
+      const grid = document.getElementById('fashionGrid');
+      grid.innerHTML = fashionData.map(item => `
+        <div class="card">
+          <img src="${item.image}" alt="${item.title}">
+          <div class="card-body">
+            <h3>${item.title}</h3>
+            <div><span class="price">${item.price}</span><span class="status">${item.status}</span></div>
+            <p>${item.description}</p>
+            <div class="actions">
+              <a href="mailto:${item.email}">📧 Email</a>
+              <a href="${item.instagram}" target="_blank">📸 Instagram</a>
+            </div>
+          </div>
+        </div>
+      `).join('');
+    }
+  </script>
+  <!-- 🟢 Dynamic data script ends -->
 </body>
 </html>
