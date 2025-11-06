@@ -1,239 +1,209 @@
-
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>HARKEIN | Real Estate & Fashion</title>
-  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>HARKEIN — Real Estate & Fashion</title>
+  <link rel="icon" href="https://i.ibb.co/RpKv1djv/file-0000000043cc620a9e2842b1759c4eac-conversation-id-681fc7fd-2814-800f-981e-7caabb6ca2dd-message-i.png" type="image/png">
   <style>
-    :root {
-      --blue: #003366;
-      --cream: #f5f5dc;
-      --red: #cc0000;
+    /* Modern luxury palette */
+    :root{
+      --navy: #0A1D37;
+      --gold: #F5E6C5;
+      --accent: #E63946;
+      --bg: #FAFAFA;
+      --text: #1A1A1A;
     }
-    * {
-      box-sizing: border-box;
-      margin: 0;
-      padding: 0;
-      font-family: 'Roboto', sans-serif;
-    }
-    body {
-      background-color: var(--cream);
-      color: #333;
-      line-height: 1.6;
-    }
-    header {
-      background-color: var(--blue);
-      color: white;
-      padding: 1rem 2rem;
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: space-between;
-      align-items: center;
-      position: sticky;
-      top: 0;
-      z-index: 1000;
-    }
-    nav {
-      display: flex;
-      flex-wrap: wrap;
-    }
-    nav a {
-      color: white;
-      margin-left: 1.5rem;
-      text-decoration: none;
-      font-weight: 500;
-      transition: color 0.3s ease;
-    }
-    nav a:hover {
-      color: var(--red);
-    }
-    .hero {
-      background: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)), url('https://via.placeholder.com/1600x600') no-repeat center/cover;
-      color: white;
-      text-align: center;
-      padding: 5rem 2rem;
-    }
-    .hero h1 {
-      font-size: 3rem;
-      margin-bottom: 0.5rem;
-    }
-    .hero p {
-      font-size: 1.5rem;
-    }
-    .section {
-      padding: 3rem 2rem;
-      max-width: 1200px;
-      margin: auto;
-    }
-    .section h2 {
-      color: var(--blue);
-      margin-bottom: 1rem;
-      border-bottom: 3px solid var(--red);
-      display: inline-block;
-      padding-bottom: 0.3rem;
-      margin-bottom: 2rem;
-    }
-    .contact-form {
-      display: grid;
-      gap: 1rem;
-      max-width: 600px;
-    }
-    .contact-form input, .contact-form textarea {
-      padding: 0.75rem;
-      border: 1px solid #ccc;
-      border-radius: 5px;
-      font-size: 1rem;
-      resize: vertical;
-    }
-    .contact-form button {
-      background-color: var(--red);
-      color: white;
-      padding: 0.75rem;
-      border: none;
-      border-radius: 5px;
-      cursor: pointer;
-      font-weight: 600;
-      font-size: 1rem;
-    }
-    .contact-form button:hover {
-      background-color: #990000;
-    }
-    footer {
-      background-color: var(--blue);
-      color: white;
-      text-align: center;
-      padding: 2rem;
-      margin-top: 2rem;
-      font-size: 0.9rem;
-    }
-    #map {
-      width: 100%;
-      height: 300px;
-      border: 1px solid #ccc;
-      border-radius: 6px;
-      margin-top: 1rem;
-    }
-    #live-chat {
-      position: fixed;
-      bottom: 20px;
-      right: 20px;
-      background-color: var(--red);
-      color: white;
-      padding: 0.75rem 1.5rem;
-      border-radius: 30px;
-      cursor: pointer;
-      font-weight: 700;
-      box-shadow: 0 2px 6px rgba(0,0,0,0.3);
-    }
-    #live-chat:hover {
-      background-color: #990000;
-    }
+    *{box-sizing:border-box}
+    body{font-family: 'Helvetica Neue', Arial, sans-serif; margin:0; background:var(--bg); color:var(--text);}
+    header{background:linear-gradient(90deg, rgba(10,29,55,0.95), rgba(10,29,55,0.85)); color:white; position:sticky; top:0; z-index:1000;}
+    .container{max-width:1200px; margin:0 auto; padding:0 20px;}
+    .topbar{display:flex; align-items:center; justify-content:space-between; padding:18px 0;}
+    .logo img{height:54px}
+    nav a{color:white; text-decoration:none; margin-left:20px; font-weight:600; opacity:0.95}
+    .hero{background-image:url('https://images.unsplash.com/photo-1560184897-6c8a3f1bde6a?auto=format&fit=crop&w=1600&q=80'); background-size:cover; background-position:center; color:white; padding:120px 0; position:relative;}
+    .hero::after{content:''; position:absolute; inset:0; background:linear-gradient(180deg, rgba(10,29,55,0.45), rgba(10,29,55,0.65));}
+    .hero .container{position:relative; z-index:2; text-align:left;}
+    .hero h1{font-size:48px; margin:0 0 10px; letter-spacing:1px;}
+    .hero p{font-size:20px; margin:0 0 20px; color:var(--gold);}
+    .btn{display:inline-block; padding:12px 18px; border-radius:6px; text-decoration:none; font-weight:700;}
+    .btn-primary{background:var(--gold); color:var(--navy); margin-right:12px;}
+    .btn-ghost{border:2px solid rgba(255,255,255,0.15); color:white;}
+
+    /* Featured carousel */
+    .carousel{position:relative; overflow:hidden;}
+    .slides{display:flex; transition:transform 0.7s ease;}
+    .slide{min-width:100%; height:420px; background-size:cover; background-position:center; display:flex; align-items:flex-end; padding:30px; color:white;}
+    .slide .meta{background:rgba(0,0,0,0.45); padding:12px 16px; border-radius:6px;}
+    .carousel-controls{position:absolute; top:50%; left:12px; right:12px; display:flex; justify-content:space-between; transform:translateY(-50%);}
+
+    /* Sections */
+    section{padding:60px 0;}
+    h2{color:var(--navy); margin:0 0 18px; font-size:28px;}
+    .grid{display:grid; grid-template-columns:repeat(auto-fit,minmax(240px,1fr)); gap:18px;}
+    .card{background:white; border-radius:10px; overflow:hidden; box-shadow:0 6px 18px rgba(10,29,55,0.06);}
+    .card img{width:100%; height:180px; object-fit:cover; display:block;}
+    .card-body{padding:14px;}
+    .price{font-weight:800; color:var(--navy);}
+    .status{display:inline-block; padding:6px 10px; border-radius:999px; background:var(--gold); color:var(--navy); font-weight:700; margin-left:10px;}
+    .actions a{display:inline-block; margin-right:10px; text-decoration:none; color:var(--accent); font-weight:700;}
+
+    /* Tabs */
+    .tabs{display:flex; gap:12px; margin-bottom:18px;}
+    .tab{padding:8px 14px; border-radius:999px; background:white; cursor:pointer; box-shadow:0 4px 10px rgba(10,29,55,0.06); font-weight:700;}
+    .tab.active{background:linear-gradient(90deg,var(--navy),#163451); color:white;}
+
+    /* Gallery */
+    .gallery-grid img{width:100%; height:180px; object-fit:cover; border-radius:8px; cursor:pointer;}
+    /* Contact */
+    .contact-form{max-width:640px;}
+    input, textarea{width:100%; padding:12px; border:1px solid #e6e6e6; border-radius:8px; margin-bottom:12px;}
+    button[type=submit]{background:var(--navy); color:white; border:none; padding:12px 18px; border-radius:8px; font-weight:800;}
+
+    /* Footer */
+    footer{background:var(--navy); color:white; padding:28px 0; margin-top:40px;}
+    .social a{color:var(--gold); margin-left:12px; text-decoration:none;}
+
+    /* Lightbox */
+    .lightbox{position:fixed; inset:0; display:none; align-items:center; justify-content:center; background:rgba(0,0,0,0.8); z-index:2000;}
+    .lightbox img{max-width:90%; max-height:80%; border-radius:8px;}
+
+    /* Responsive */
+    @media(max-width:768px){ .hero{padding:80px 0} .hero h1{font-size:32px} .topbar{padding:12px 0} .logo img{height:44px} }
   </style>
 </head>
 <body>
   <header>
-    <div>
-      <img src="https://i.ibb.co/RpKv1djv/file-0000000043cc620a9e2842b1759c4eac-conversation-id-681fc7fd-2814-800f-981e-7caabb6ca2dd-message-i.png" alt="HARKEIN Logo" style="height: 50px;">
+    <div class="container topbar">
+      <div class="logo"><a href="#home"><img src="https://i.ibb.co/RpKv1djv/file-0000000043cc620a9e2842b1759c4eac-conversation-id-681fc7fd-2814-800f-981e-7caabb6ca2dd-message-i.png" alt="HARKEIN logo"></a></div>
+      <nav>
+        <a href="#home">Home</a><a href="#listings">Listings</a><a href="#gallery">Gallery</a><a href="#contact">Contact</a>
+        <a href="https://instagram.com/harkein_ein" target="_blank" style="margin-left:18px; color:var(--gold);">Instagram</a>
+      </nav>
     </div>
-    <nav>
-      <a href="#home">Home</a>
-      <a href="#about">About</a>
-      <a href="#real-estate">Real Estate</a>
-      <a href="#fashion">Fashion</a>
-      <a href="#blog">Blog</a>
-      <a href="#testimonials">Testimonials</a>
-      <a href="#contact">Contact</a>
-    </nav>
   </header>
 
-  <section class="hero" id="home">
-    <h1>Welcome to HARKEIN</h1>
-    <p>Where Real Estate meets Fashion</p>
-  </section>
+  <main>
+    <section id="home" class="hero">
+      <div class="container">
+        <h1>HARKEIN</h1>
+        <p>Real Estate & Fashion — Where Lifestyle Meets Elegance</p>
+        <p><a class="btn btn-primary" href="#listings">Explore Listings</a><a class="btn btn-ghost" href="#gallery">View Gallery</a></p>
+      </div>
+      <div class="carousel" aria-hidden="true" style="margin-top:18px;">
+        <div class="slides">
+<div class="slide" style="background-image:url('https://images.unsplash.com/photo-1560184897-6c8a3f1bde6a?auto=format&fit=crop&w=1600&q=80')"><div class="container"><div class="meta"><strong style="font-size:18px">Dubai Penthouse</strong><br><span style="opacity:0.9">Dubai, UAE</span><p style="margin-top:8px;"><a class="btn btn-primary" href="#listings">View Details</a></p></div></div></div><div class="slide" style="background-image:url('https://images.unsplash.com/photo-1522708323590-d24dbb6b0267?auto=format&fit=crop&w=1600&q=80')"><div class="container"><div class="meta"><strong style="font-size:18px">London Apartment</strong><br><span style="opacity:0.9">London, UK</span><p style="margin-top:8px;"><a class="btn btn-primary" href="#listings">View Details</a></p></div></div></div><div class="slide" style="background-image:url('https://images.unsplash.com/photo-1505691723518-36a0be7b63a0?auto=format&fit=crop&w=1600&q=80')"><div class="container"><div class="meta"><strong style="font-size:18px">Maldives Villa</strong><br><span style="opacity:0.9">Maldives</span><p style="margin-top:8px;"><a class="btn btn-primary" href="#listings">View Details</a></p></div></div></div><div class="slide" style="background-image:url('https://images.unsplash.com/photo-1570129477492-45c003edd2be?auto=format&fit=crop&w=1600&q=80')"><div class="container"><div class="meta"><strong style="font-size:18px">Lagos Duplex</strong><br><span style="opacity:0.9">Lagos, Nigeria</span><p style="margin-top:8px;"><a class="btn btn-primary" href="#listings">View Details</a></p></div></div></div>
+        </div>
+        <div class="carousel-controls">
+          <div><button id="prev" aria-label="Previous" style="background:none;border:none;color:white;font-size:28px;">❮</button></div>
+          <div><button id="next" aria-label="Next" style="background:none;border:none;color:white;font-size:28px;">❯</button></div>
+        </div>
+      </div>
+    </section>
 
-  <section class="section" id="about">
-    <h2>About HARKEIN</h2>
-    <p>HARKEIN is a modern company that blends two dynamic industries: Real Estate and Fashion. We offer exquisite properties and stylish clothing that reflect taste and elegance.</p>
-  </section>
+    <section id="listings" class="container">
+      <h2>Available Listings</h2>
+      <div class="tabs" role="tablist" aria-label="Listing Types">
+        <div class="tab active" data-tab="real">Real Estate</div>
+        <div class="tab" data-tab="fashion">Fashion</div>
+      </div>
 
-  <section class="section" id="real-estate">
-    <h2>Our Real Estate Services</h2>
-    <p>We provide premium real estate services including property sales, rentals, management, and investment opportunities.</p>
-  </section>
+      <div id="real" class="tab-content">
+        <div class="grid">
+<div class="card"><img src="https://images.unsplash.com/photo-1560185127-6b0a7d3a3f6f?auto=format&fit=crop&w=800&q=80" alt="Luxury Villa in Dubai"><div class="card-body"><h3 style="margin:0 0 6px;">Luxury Villa in Dubai</h3><div style="display:flex; align-items:center; margin-bottom:8px;"><div class="price">$2,500,000</div><div class="status">For Sale</div></div><p style="margin:0 0 12px; color:#555;">Dubai, UAE — Luxury property with premium finishes.</p><div class="actions"><a href="mailto:folaranmihussein@gmail.com">📧 Email</a><a href="https://instagram.com/harkein_ein" target="_blank">📸 Instagram</a></div></div></div><div class="card"><img src="https://images.unsplash.com/photo-1528909514045-2fa4ac7a08ba?auto=format&fit=crop&w=800&q=80" alt="Penthouse - London"><div class="card-body"><h3 style="margin:0 0 6px;">Penthouse - London</h3><div style="display:flex; align-items:center; margin-bottom:8px;"><div class="price">$1,800,000</div><div class="status">For Sale</div></div><p style="margin:0 0 12px; color:#555;">London, UK — Luxury property with premium finishes.</p><div class="actions"><a href="mailto:folaranmihussein@gmail.com">📧 Email</a><a href="https://instagram.com/harkein_ein" target="_blank">📸 Instagram</a></div></div></div><div class="card"><img src="https://images.unsplash.com/photo-1512917774080-9991f1c4c750?auto=format&fit=crop&w=800&q=80" alt="Beach Villa - Maldives"><div class="card-body"><h3 style="margin:0 0 6px;">Beach Villa - Maldives</h3><div style="display:flex; align-items:center; margin-bottom:8px;"><div class="price">$3,200,000</div><div class="status">For Sale</div></div><p style="margin:0 0 12px; color:#555;">Maldives — Luxury property with premium finishes.</p><div class="actions"><a href="mailto:folaranmihussein@gmail.com">📧 Email</a><a href="https://instagram.com/harkein_ein" target="_blank">📸 Instagram</a></div></div></div><div class="card"><img src="https://images.unsplash.com/photo-1549187774-b4e9b0445b88?auto=format&fit=crop&w=800&q=80" alt="Modern Duplex - Lagos"><div class="card-body"><h3 style="margin:0 0 6px;">Modern Duplex - Lagos</h3><div style="display:flex; align-items:center; margin-bottom:8px;"><div class="price">$450,000</div><div class="status">For Rent</div></div><p style="margin:0 0 12px; color:#555;">Lagos, Nigeria — Luxury property with premium finishes.</p><div class="actions"><a href="mailto:folaranmihussein@gmail.com">📧 Email</a><a href="https://instagram.com/harkein_ein" target="_blank">📸 Instagram</a></div></div></div>
+        </div>
+      </div>
 
-  <section class="section" id="fashion">
-    <h2>Our Fashion Line</h2>
-    <p>Explore our unique fashion collection tailored for elegance and contemporary style for all genders and ages.</p>
-  </section>
+      <div id="fashion" class="tab-content" style="display:none">
+        <div class="grid">
+<div class="card"><img src="https://images.unsplash.com/photo-1541099649105-f69ad21f3246?auto=format&fit=crop&w=800&q=80" alt="Designer Tuxedo"><div class="card-body"><h3 style="margin:0 0 6px;">Designer Tuxedo</h3><div style="display:flex; align-items:center; margin-bottom:8px;"><div class="price">$850</div><div class="status">In Stock</div></div><p style="margin:0 0 12px; color:#555;">Premium navy tuxedo, custom fit</p><div class="actions"><a href="mailto:folaranmihussein@gmail.com">📧 Email</a><a href="https://instagram.com/harkein_ein" target="_blank">📸 Instagram</a></div></div></div><div class="card"><img src="https://images.unsplash.com/photo-1503342452485-86f7e8ff8fbe?auto=format&fit=crop&w=800&q=80" alt="Evening Gown"><div class="card-body"><h3 style="margin:0 0 6px;">Evening Gown</h3><div style="display:flex; align-items:center; margin-bottom:8px;"><div class="price">$620</div><div class="status">In Stock</div></div><p style="margin:0 0 12px; color:#555;">Red silk evening gown, sizes S-XL</p><div class="actions"><a href="mailto:folaranmihussein@gmail.com">📧 Email</a><a href="https://instagram.com/harkein_ein" target="_blank">📸 Instagram</a></div></div></div><div class="card"><img src="https://images.unsplash.com/photo-1520975918724-9f3f73f7b0f7?auto=format&fit=crop&w=800&q=80" alt="Streetwear Set"><div class="card-body"><h3 style="margin:0 0 6px;">Streetwear Set</h3><div style="display:flex; align-items:center; margin-bottom:8px;"><div class="price">$220</div><div class="status">In Stock</div></div><p style="margin:0 0 12px; color:#555;">Limited edition streetwear set</p><div class="actions"><a href="mailto:folaranmihussein@gmail.com">📧 Email</a><a href="https://instagram.com/harkein_ein" target="_blank">📸 Instagram</a></div></div></div><div class="card"><img src="https://images.unsplash.com/photo-1520975918724-9f3f73f7b0f7?auto=format&fit=crop&w=800&q=80" alt="Luxury Handbag"><div class="card-body"><h3 style="margin:0 0 6px;">Luxury Handbag</h3><div style="display:flex; align-items:center; margin-bottom:8px;"><div class="price">$1,200</div><div class="status">In Stock</div></div><p style="margin:0 0 12px; color:#555;">Handmade leather handbag</p><div class="actions"><a href="mailto:folaranmihussein@gmail.com">📧 Email</a><a href="https://instagram.com/harkein_ein" target="_blank">📸 Instagram</a></div></div></div>
+        </div>
+      </div>
+    </section>
 
-  <section class="section" id="blog">
-    <h2>Latest Blog Posts</h2>
-    <div class="blog-posts">
-      <article class="blog-post">
-        <h3>New Real Estate Trends in 2025</h3>
-        <p>Stay updated with the latest trends transforming the real estate market this year.</p>
-      </article>
-      <article class="blog-post">
-        <h3>Fashion Tips for Spring</h3>
-        <p>Discover the must-have styles to refresh your wardrobe this spring season.</p>
-      </article>
-      <article class="blog-post">
-        <h3>Investing in Property: What You Need to Know</h3>
-        <p>Learn the essentials of property investment from our experts.</p>
-      </article>
-    </div>
-  </section>
+    <section id="gallery" class="container">
+      <h2>Gallery</h2>
+      <div class="grid gallery-grid">
+<img src="https://images.unsplash.com/photo-1560184897-6c8a3f1bde6a?auto=format&fit=crop&w=1600&q=80" alt="Gallery image" onclick="openLightbox(this.src)">
+<img src="https://images.unsplash.com/photo-1522708323590-d24dbb6b0267?auto=format&fit=crop&w=1600&q=80" alt="Gallery image" onclick="openLightbox(this.src)">
+<img src="https://images.unsplash.com/photo-1505691723518-36a0be7b63a0?auto=format&fit=crop&w=1600&q=80" alt="Gallery image" onclick="openLightbox(this.src)">
+<img src="https://images.unsplash.com/photo-1570129477492-45c003edd2be?auto=format&fit=crop&w=1600&q=80" alt="Gallery image" onclick="openLightbox(this.src)">
+<img src="https://images.unsplash.com/photo-1560185127-6b0a7d3a3f6f?auto=format&fit=crop&w=800&q=80" alt="Gallery image" onclick="openLightbox(this.src)">
+<img src="https://images.unsplash.com/photo-1528909514045-2fa4ac7a08ba?auto=format&fit=crop&w=800&q=80" alt="Gallery image" onclick="openLightbox(this.src)">
+<img src="https://images.unsplash.com/photo-1512917774080-9991f1c4c750?auto=format&fit=crop&w=800&q=80" alt="Gallery image" onclick="openLightbox(this.src)">
+<img src="https://images.unsplash.com/photo-1549187774-b4e9b0445b88?auto=format&fit=crop&w=800&q=80" alt="Gallery image" onclick="openLightbox(this.src)">
 
-  <section class="section" id="testimonials">
-    <h2>What Our Customers Say</h2>
-    <div class="testimonial">
-      <p>HARKEIN helped me find the perfect home. Their service was professional and attentive throughout the process.</p>
-      <div class="author">- Emily R.</div>
-    </div>
-    <div class="testimonial">
-      <p>The fashion collection is outstanding. High-quality and stylish – I always get compliments on my outfits.</p>
-      <div class="author">- Marcus T.</div>
-    </div>
-    <div class="testimonial">
-      <p>I highly recommend HARKEIN for anyone looking for trusted real estate advice and excellent fashion products.</p>
-      <div class="author">- Sarah K.</div>
-    </div>
-  </section>
+      </div>
+    </section>
 
-  <section class="section" id="contact">
-    <h2>Contact Us</h2>
-    <p>Find us at our office or send us a message using the form below.</p>
-    <div id="map"></div>
-    <form action="https://formsubmit.co/folaranmihussein@gmail.com" method="POST" class="contact-form">
-      <input type="text" name="name" placeholder="Your Name" required />
-      <input type="email" name="email" placeholder="Your Email" required />
-      <textarea name="message" rows="5" placeholder="Your Message" required></textarea>
-      <button type="submit">Send Message</button>
-    </form>
-  </section>
+    <section id="contact" class="container">
+      <h2>Contact</h2>
+      <p>Reach out to HARKEIN for inquiries on properties and fashion products.</p>
+      <form class="contact-form" action="https://formsubmit.co/folaranmihussein@gmail.com" method="POST" onsubmit="handleForm(event)">
+        <input type="hidden" name="_captcha" value="false">
+        <input type="hidden" name="_next" value="#thankyou">
+        <input type="text" name="name" placeholder="Your name" required>
+        <input type="email" name="email" placeholder="Your email" required>
+        <textarea name="message" rows="5" placeholder="Your message" required></textarea>
+        <button type="submit">Send Message</button>
+      </form>
+    </section>
 
-  <div id="live-chat" onclick="alert('Live chat will be integrated here!')">Live Chat</div>
+    <section id="thankyou" class="container" style="display:none; text-align:center;">
+      <h2>Thank You</h2>
+      <p>Thank you for contacting HARKEIN. We received your message and will get back to you shortly.</p>
+      <p><a class="btn btn-primary" href="#home">Return to Home</a></p>
+    </section>
+
+  </main>
+
+  <div class="lightbox" id="lightbox" onclick="closeLightbox()">
+    <img id="lightbox-img" src="" alt="Preview">
+  </div>
 
   <footer>
-    <p>&copy; 2025 HARKEIN. All rights reserved.</p>
+    <div class="container" style="display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap;">
+      <div>&copy; 2025 HARKEIN</div>
+      <div>Contact: <a href="mailto:folaranmihussein@gmail.com" style="color:var(--gold)">folaranmihussein@gmail.com</a> | <a href="https://instagram.com/harkein_ein" target="_blank" style="color:var(--gold)">@harkein_ein</a></div>
+    </div>
   </footer>
 
   <script>
-    function initMap() {
-      const officeLocation = { lat: 40.7128, lng: -74.0060 };
-      const map = new google.maps.Map(document.getElementById("map"), {
-        zoom: 12,
-        center: officeLocation,
-      });
-      new google.maps.Marker({
-        position: officeLocation,
-        map: map,
-        title: "HARKEIN Office",
-      });
+    // Carousel
+    const slides = document.querySelectorAll('.slide');
+    const slidesContainer = document.querySelector('.slides');
+    let index = 0;
+    function showSlide(i){ slidesContainer.style.transform = 'translateX(' + (-100 * i) + '%)'; }
+    document.getElementById('next').addEventListener('click', ()=>{ index = (index+1)%slides.length; showSlide(index); });
+    document.getElementById('prev').addEventListener('click', ()=>{ index = (index-1+slides.length)%slides.length; showSlide(index); });
+    // Auto-play
+    setInterval(()=>{ index = (index+1)%slides.length; showSlide(index); }, 5000);
+
+    // Tabs
+    document.querySelectorAll('.tab').forEach(t=> t.addEventListener('click', () => {
+      document.querySelectorAll('.tab').forEach(x=>x.classList.remove('active'));
+      t.classList.add('active');
+      const tab = t.getAttribute('data-tab');
+      document.getElementById('real').style.display = tab==='real' ? 'block' : 'none';
+      document.getElementById('fashion').style.display = tab==='fashion' ? 'block' : 'none';
+    }));
+
+    // Lightbox
+    function openLightbox(src){ document.getElementById('lightbox-img').src = src; document.getElementById('lightbox').style.display = 'flex'; }
+    function closeLightbox(){ document.getElementById('lightbox').style.display = 'none'; }
+
+    // Form handler: show thank you section after submission (Formsubmit will handle email)
+    function handleForm(e){
+      setTimeout(()=>{ document.getElementById('thankyou').style.display = 'block'; document.getElementById('thankyou').scrollIntoView({behavior:'smooth'}); }, 800);
     }
+
+    // Smooth scrolling for nav links
+    document.querySelectorAll('a[href^="#"]').forEach(a=>{
+      a.addEventListener('click', function(e){
+        const target = document.querySelector(this.getAttribute('href'));
+        if(target){ e.preventDefault(); target.scrollIntoView({behavior:'smooth'}); }
+      });
+    });
   </script>
-  <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBeOLlFxrfB_Qycj_vYLHrwRZ3VD0pfiP8&callback=initMap"></script>
 </body>
 </html>
