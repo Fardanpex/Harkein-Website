@@ -394,5 +394,51 @@
       }
     });
   </script>
+  <!-- Firebase Core -->
+<script type="module">
+  // Import Firebase SDKs
+  import { initializeApp } from "https://www.gstatic.com/firebasejs/11.0.1/firebase-app.js";
+  import { getFirestore, collection, addDoc, getDocs } from "https://www.gstatic.com/firebasejs/11.0.1/firebase-firestore.js";
+
+  // Your Firebase Config
+  const firebaseConfig = {
+    apiKey: "AIzaSyExample-Your-Key",
+    authDomain: "harkein-site.firebaseapp.com",
+    projectId: "harkein-site",
+    storageBucket: "harkein-site.appspot.com",
+    messagingSenderId: "123456789",
+    appId: "1:123456789:web:abcd1234efgh5678"
+  };
+
+  // Initialize Firebase
+  const app = initializeApp(firebaseConfig);
+  const db = getFirestore(app);
+
+  // Form submission handler
+  document.getElementById('uploadForm').addEventListener('submit', async (e) => {
+    e.preventDefault();
+    
+    const category = document.getElementById('category').value; // "properties" or "fashion"
+    const title = document.getElementById('title').value;
+    const price = document.getElementById('price').value;
+    const location = document.getElementById('location').value;
+    const description = document.getElementById('description').value;
+    const image = document.getElementById('image').value;
+    const email = document.getElementById('email').value;
+    const instagram = document.getElementById('instagram').value;
+    const status = document.getElementById('status').value;
+
+    try {
+      await addDoc(collection(db, category), {
+        title, price, location, description, image, email, instagram, status
+      });
+      alert("✅ Listing added successfully!");
+      e.target.reset();
+    } catch (error) {
+      console.error("Error adding listing:", error);
+      alert("❌ Failed to add listing.");
+    }
+  });
+</script>
 </body>
 </html>
