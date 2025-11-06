@@ -3,32 +3,61 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Admin Upload | Harkein Listings</title>
-  
+  <title>Harkein Admin Dashboard</title>
+
   <!-- Google Fonts -->
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
 
-  <!-- Basic Styling -->
   <style>
+    /* General Styles */
     body {
       font-family: 'Poppins', sans-serif;
       margin: 0;
-      background: linear-gradient(135deg, #f0f4f8, #d9e2ec);
+      background: #e0f2fe;
       display: flex;
       justify-content: center;
-      padding: 40px 20px;
+      padding: 30px 10px;
     }
 
-    .container {
-      background: #fff;
-      padding: 30px 40px;
-      border-radius: 12px;
-      box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+    /* Hero Section */
+    .hero {
+      text-align: center;
+      background: linear-gradient(90deg, #1e3a8a, #3b82f6);
+      color: white;
+      padding: 30px 20px;
+      border-radius: 15px;
+      box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+      margin-bottom: 25px;
       max-width: 500px;
       width: 100%;
     }
 
-    h1 {
+    .hero h1 {
+      font-size: 28px;
+      margin-bottom: 8px;
+    }
+
+    .hero p {
+      font-size: 16px;
+      opacity: 0.9;
+    }
+
+    /* Container Form Card */
+    .container {
+      background: linear-gradient(to bottom, #ffffff, #f0f4f8);
+      padding: 35px 40px;
+      border-radius: 15px;
+      box-shadow: 0 15px 30px rgba(0,0,0,0.2);
+      max-width: 500px;
+      width: 100%;
+      transition: transform 0.2s;
+    }
+
+    .container:hover {
+      transform: translateY(-3px);
+    }
+
+    h2 {
       text-align: center;
       color: #1e3a8a;
       margin-bottom: 25px;
@@ -62,20 +91,21 @@
     }
 
     button {
-      background: #1e3a8a;
+      background: linear-gradient(90deg, #1e3a8a, #3b82f6);
       color: white;
+      font-weight: 600;
       border: none;
-      padding: 12px 20px;
-      border-radius: 8px;
+      padding: 12px;
+      border-radius: 12px;
       font-size: 16px;
       cursor: pointer;
       margin-top: 15px;
       width: 100%;
-      transition: 0.3s background;
+      transition: 0.3s;
     }
 
     button:hover {
-      background: #3b5ec4;
+      background: linear-gradient(90deg, #3b82f6, #1e3a8a);
     }
 
     #imagePreview {
@@ -93,48 +123,86 @@
       color: green;
     }
 
-    /* Modal Styles */
+    /* Confirmation Modal Styles */
     #confirmModal {
       display: none;
       position: fixed;
       top: 0; left: 0;
       width: 100%; height: 100%;
-      background: rgba(0,0,0,0.6);
+      background: rgba(0,0,0,0.7);
       display: flex;
       justify-content: center;
       align-items: center;
       z-index: 1000;
+      backdrop-filter: blur(4px);
     }
 
     #confirmModal .modal-content {
-      background: #fff;
-      padding: 25px 30px;
-      border-radius: 12px;
+      background: linear-gradient(135deg, #1e3a8a, #3b82f6);
+      color: white;
+      padding: 30px 25px;
+      border-radius: 15px;
       max-width: 400px;
       text-align: center;
-      box-shadow: 0 8px 25px rgba(0,0,0,0.2);
+      box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+      animation: slideDown 0.4s ease forwards;
     }
 
     #confirmModal img {
-      max-width: 200px;
-      margin: 10px 0;
-      border-radius: 10px;
-      border: 1px solid #ccc;
+      max-width: 220px;
+      margin: 15px 0;
+      border-radius: 12px;
+      border: 2px solid white;
     }
 
     #confirmModal button {
       width: 45%;
       margin: 10px 5px 0 5px;
+      border-radius: 12px;
+      padding: 10px 0;
+      font-weight: 600;
+      cursor: pointer;
+      border: none;
+      transition: 0.3s;
+    }
+
+    #confirmBtn {
+      background: #10b981;
+      color: white;
+    }
+
+    #confirmBtn:hover {
+      background: #059669;
+    }
+
+    #cancelBtn {
+      background: #ef4444;
+      color: white;
+    }
+
+    #cancelBtn:hover {
+      background: #b91c1c;
+    }
+
+    @keyframes slideDown {
+      from { transform: translateY(-30px); opacity: 0; }
+      to { transform: translateY(0); opacity: 1; }
     }
 
     /* Mini Card Preview */
     .preview-card {
-      background: #f9fafb;
-      border-radius: 10px;
-      padding: 12px;
+      background: white;
+      border-radius: 15px;
+      padding: 15px;
       margin-top: 15px;
       border: 1px solid #ddd;
+      box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+      transition: transform 0.2s;
       text-align: center;
+    }
+
+    .preview-card:hover {
+      transform: scale(1.02);
     }
 
     .preview-card img {
@@ -155,11 +223,28 @@
       color: #555;
     }
 
+    /* Fade-in animation */
+    #miniPreview {
+      animation: fadeIn 0.4s ease forwards;
+      opacity: 0;
+    }
+
+    @keyframes fadeIn {
+      to { opacity: 1; }
+    }
   </style>
 </head>
 <body>
+
+  <!-- Hero Header -->
+  <div class="hero">
+    <h1>Harkein Admin Dashboard</h1>
+    <p>Manage Properties & Fashion Listings Effortlessly</p>
+  </div>
+
+  <!-- Form Container -->
   <div class="container">
-    <h1>Harkein Admin Upload</h1>
+    <h2>Add New Listing</h2>
     <form id="uploadForm" enctype="multipart/form-data">
       <label>Category:</label>
       <select name="category" required>
@@ -182,7 +267,7 @@
       <label>Image File:</label>
       <input type="file" name="imageFile" accept="image/*" required>
 
-      <!-- Preview -->
+      <!-- Live Image Preview -->
       <img id="imagePreview" src="" alt="Image Preview" style="display:none;">
 
       <!-- Mini Card Preview -->
@@ -195,24 +280,30 @@
 
       <button type="submit">Add Listing</button>
     </form>
+
     <p id="status"></p>
   </div>
 
   <!-- Confirmation Modal -->
   <div id="confirmModal">
     <div class="modal-content">
-      <h2>Confirm Listing</h2>
-      <p id="confirmText"></p>
-      <img id="confirmImage" src="" alt="Preview">
-      <br>
+      <h2>Confirm Your Listing</h2>
+      <p id="confirmText" style="font-weight:500; margin-bottom:10px;"></p>
+      <div class="preview-card">
+        <img id="confirmImage" src="" alt="Preview">
+        <h3 id="confirmTitle"></h3>
+        <p id="confirmPrice"></p>
+        <p id="confirmLocation"></p>
+      </div>
       <button id="confirmBtn">Confirm Upload</button>
       <button id="cancelBtn">Cancel</button>
     </div>
   </div>
 
+  <!-- Scripts -->
   <script src="js/upload.js"></script>
   <script>
-    // Mini card preview
+    // Mini card live preview
     const titleInput = document.querySelector('input[name="title"]');
     const priceInput = document.querySelector('input[name="price"]');
     const locationInput = document.querySelector('input[name="location"]');
@@ -253,6 +344,55 @@
     priceInput.addEventListener("input", updateMiniPreview);
     locationInput.addEventListener("input", updateMiniPreview);
     imageInput.addEventListener("change", updateMiniPreview);
+
+    // Confirmation Modal logic
+    const confirmModal = document.getElementById("confirmModal");
+    const confirmText = document.getElementById("confirmText");
+    const confirmImage = document.getElementById("confirmImage");
+    const confirmTitle = document.getElementById("confirmTitle");
+    const confirmPrice = document.getElementById("confirmPrice");
+    const confirmLocation = document.getElementById("confirmLocation");
+    const confirmBtn = document.getElementById("confirmBtn");
+    const cancelBtn = document.getElementById("cancelBtn");
+
+    const uploadForm = document.getElementById("uploadForm");
+
+    uploadForm.addEventListener("submit", function(e){
+      e.preventDefault(); // prevent default form submission
+
+      const category = uploadForm.category.value;
+      const title = uploadForm.title.value;
+      const price = uploadForm.price.value;
+      const location = uploadForm.location.value;
+
+      confirmText.innerHTML = `<strong>Category:</strong> ${category}`;
+
+      confirmTitle.innerText = title;
+      confirmPrice.innerText = price;
+      confirmLocation.innerText = location;
+
+      const file = uploadForm.imageFile.files[0];
+      if(file){
+        const reader = new FileReader();
+        reader.onload = e => {
+          confirmImage.src = e.target.result;
+        };
+        reader.readAsDataURL(file);
+      }
+
+      confirmModal.style.display = "flex";
+    });
+
+    cancelBtn.addEventListener("click", function(){
+      confirmModal.style.display = "none";
+    });
+
+    confirmBtn.addEventListener("click", function(){
+      confirmModal.style.display = "none";
+      if(typeof uploadListing === "function"){
+        uploadListing();
+      }
+    });
   </script>
 </body>
 </html>
