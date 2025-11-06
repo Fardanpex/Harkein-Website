@@ -412,7 +412,7 @@
 
   // Initialize Firebase
   const app = initializeApp(firebaseConfig);
-  const db = getFirestore(app);
+const db = getFirestore(app);
 
   // Form submission handler
   document.getElementById('uploadForm').addEventListener('submit', async (e) => {
@@ -440,5 +440,39 @@
     }
   });
 </script>
+  <script type="module">
+  import { getFirestore, collection, addDoc, serverTimestamp } from "https://www.gstatic.com/firebasejs/10.12.0/firebase-firestore.js";
+
+  const db = getFirestore();
+
+  document.getElementById("uploadForm").addEventListener("submit", async (e) => {
+    e.preventDefault();
+
+    const type = document.getElementById("itemType").value;
+    const title = document.getElementById("title").value;
+    const price = document.getElementById("price").value;
+    const description = document.getElementById("description").value;
+    const image = document.getElementById("image").value;
+    const email = document.getElementById("email").value;
+    const instagram = document.getElementById("instagram").value;
+
+    try {
+      await addDoc(collection(db, type), {
+        title,
+        price,
+        description,
+        image,
+        email,
+        instagram,
+        createdAt: serverTimestamp(),
+      });
+      alert(`${type} item added successfully!`);
+      e.target.reset();
+    } catch (error) {
+      console.error("Error adding document: ", error);
+      alert("Failed to add item.");
+    }
+  });
+        </script>
 </body>
 </html>
