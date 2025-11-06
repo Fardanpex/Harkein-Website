@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Upload New Listing</title>
+</head>
+<body>
+  <h1>Upload New Listing</h1>
+  <form id="uploadForm" enctype="multipart/form-data">
+    <label>Category:</label>
+    <select name="category" required>
+      <option value="properties">Property</option>
+      <option value="fashion">Fashion</option>
+    </select><br><br>
+
+    <label>Title:</label>
+    <input type="text" name="title" required><br><br>
+
+    <label>Price:</label>
+    <input type="text" name="price" required><br><br>
+
+    <label>Location (for properties only):</label>
+    <input type="text" name="location"><br><br>
+
+    <label>Description:</label>
+    <textarea name="description" required></textarea><br><br>
+
+    <label>Image File:</label>
+    <input type="file" name="imageFile" accept="image/*" required><br><br>
+
+    <!-- Preview -->
+    <img id="imagePreview" src="" alt="Image Preview" style="max-width:300px; display:none; margin-bottom:10px;"><br>
+
+    <button type="submit">Add Listing</button>
+  </form>
+
+  <p id="status"></p>
+
+  <!-- Confirmation Modal -->
+  <div id="confirmModal" style="display:none; position:fixed; top:0; left:0; width:100%; height:100%; 
+      background:rgba(0,0,0,0.5); justify-content:center; align-items:center;">
+    <div style="background:white; padding:20px; border-radius:10px; max-width:400px; text-align:center;">
+      <h2>Confirm Listing</h2>
+      <p id="confirmText"></p>
+      <img id="confirmImage" src="" alt="Preview" style="max-width:200px; margin:10px 0;"><br>
+      <button id="confirmBtn">Confirm Upload</button>
+      <button id="cancelBtn">Cancel</button>
+    </div>
+  </div>
+
+  <script src="js/upload.js"></script>
+</body>
+</html>
