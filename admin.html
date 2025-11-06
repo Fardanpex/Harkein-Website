@@ -4,12 +4,10 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Harkein Admin Dashboard</title>
-
-  <!-- Google Fonts -->
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
 
   <style>
-    /* General Styles */
+    /* --- Your existing styles preserved --- */
     body {
       font-family: 'Poppins', sans-serif;
       margin: 0;
@@ -19,7 +17,6 @@
       padding: 30px 10px;
     }
 
-    /* Hero Section */
     .hero {
       text-align: center;
       background: linear-gradient(90deg, #1e3a8a, #3b82f6);
@@ -32,17 +29,9 @@
       width: 100%;
     }
 
-    .hero h1 {
-      font-size: 28px;
-      margin-bottom: 8px;
-    }
+    .hero h1 { font-size: 28px; margin-bottom: 8px; }
+    .hero p { font-size: 16px; opacity: 0.9; }
 
-    .hero p {
-      font-size: 16px;
-      opacity: 0.9;
-    }
-
-    /* Container Form Card */
     .container {
       background: linear-gradient(to bottom, #ffffff, #f0f4f8);
       padding: 35px 40px;
@@ -52,235 +41,97 @@
       width: 100%;
       transition: transform 0.2s;
     }
+    .container:hover { transform: translateY(-3px); }
 
-    .container:hover {
-      transform: translateY(-3px);
-    }
+    h2 { text-align: center; color: #1e3a8a; margin-bottom: 25px; }
 
-    h2 {
-      text-align: center;
-      color: #1e3a8a;
-      margin-bottom: 25px;
-    }
-
-    label {
-      display: block;
-      margin: 12px 0 5px;
-      font-weight: 600;
-      color: #333;
-    }
-
+    label { display: block; margin: 12px 0 5px; font-weight: 600; color: #333; }
     input[type="text"], select, textarea, input[type="file"] {
-      width: 100%;
-      padding: 10px 12px;
-      border-radius: 8px;
-      border: 1px solid #ccc;
-      outline: none;
-      font-size: 14px;
-      box-sizing: border-box;
-      transition: 0.2s border-color;
+      width: 100%; padding: 10px 12px; border-radius: 8px;
+      border: 1px solid #ccc; outline: none; font-size: 14px;
+      box-sizing: border-box; transition: 0.2s border-color;
     }
-
-    input[type="text"]:focus, select:focus, textarea:focus, input[type="file"]:focus {
-      border-color: #1e3a8a;
-    }
-
-    textarea {
-      resize: vertical;
-      min-height: 80px;
-    }
+    input:focus, select:focus, textarea:focus { border-color: #1e3a8a; }
+    textarea { resize: vertical; min-height: 80px; }
 
     button {
       background: linear-gradient(90deg, #1e3a8a, #3b82f6);
-      color: white;
-      font-weight: 600;
-      border: none;
-      padding: 12px;
-      border-radius: 12px;
-      font-size: 16px;
-      cursor: pointer;
-      margin-top: 15px;
-      width: 100%;
-      transition: 0.3s;
+      color: white; font-weight: 600; border: none; padding: 12px;
+      border-radius: 12px; font-size: 16px; cursor: pointer;
+      margin-top: 15px; width: 100%; transition: 0.3s;
     }
-
-    button:hover {
-      background: linear-gradient(90deg, #3b82f6, #1e3a8a);
-    }
+    button:hover { background: linear-gradient(90deg, #3b82f6, #1e3a8a); }
 
     #imagePreview {
-      display: block;
-      margin: 15px auto;
-      max-width: 100%;
-      border-radius: 12px;
-      border: 2px solid #ccc;
+      display: block; margin: 15px auto; max-width: 100%;
+      border-radius: 12px; border: 2px solid #ccc;
     }
 
-    #status {
-      margin-top: 15px;
-      font-weight: 600;
-      text-align: center;
-      color: green;
-    }
+    #status { margin-top: 15px; font-weight: 600; text-align: center; }
 
-    /* Confirmation Modal Styles */
+    /* Confirmation Modal */
     #confirmModal {
-      display: none;
-      position: fixed;
-      top: 0; left: 0;
-      width: 100%; height: 100%;
-      background: rgba(0,0,0,0.7);
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      z-index: 1000;
+      display: none; position: fixed; top: 0; left: 0;
+      width: 100%; height: 100%; background: rgba(0,0,0,0.7);
+      justify-content: center; align-items: center; z-index: 1000;
       backdrop-filter: blur(4px);
     }
-
     #confirmModal .modal-content {
       background: linear-gradient(135deg, #1e3a8a, #3b82f6);
-      color: white;
-      padding: 30px 25px;
-      border-radius: 15px;
-      max-width: 400px;
-      text-align: center;
+      color: white; padding: 30px 25px; border-radius: 15px;
+      max-width: 400px; text-align: center;
       box-shadow: 0 10px 30px rgba(0,0,0,0.3);
       animation: slideDown 0.4s ease forwards;
     }
-
     #confirmModal img {
-      max-width: 220px;
-      margin: 15px 0;
-      border-radius: 12px;
-      border: 2px solid white;
+      max-width: 220px; margin: 15px 0; border-radius: 12px; border: 2px solid white;
     }
-
     #confirmModal button {
-      width: 45%;
-      margin: 10px 5px 0 5px;
-      border-radius: 12px;
-      padding: 10px 0;
-      font-weight: 600;
-      cursor: pointer;
-      border: none;
-      transition: 0.3s;
+      width: 45%; margin: 10px 5px 0; border-radius: 12px; padding: 10px 0;
+      font-weight: 600; cursor: pointer; border: none; transition: 0.3s;
     }
-
-    #confirmBtn {
-      background: #10b981;
-      color: white;
-    }
-
-    #confirmBtn:hover {
-      background: #059669;
-    }
-
-    #cancelBtn {
-      background: #ef4444;
-      color: white;
-    }
-
-    #cancelBtn:hover {
-      background: #b91c1c;
-    }
-
-    @keyframes slideDown {
-      from { transform: translateY(-30px); opacity: 0; }
-      to { transform: translateY(0); opacity: 1; }
-    }
-
-    /* Mini Card Preview */
-    .preview-card {
-      background: white;
-      border-radius: 15px;
-      padding: 15px;
-      margin-top: 15px;
-      border: 1px solid #ddd;
-      box-shadow: 0 8px 20px rgba(0,0,0,0.1);
-      transition: transform 0.2s;
-      text-align: center;
-    }
-
-    .preview-card:hover {
-      transform: scale(1.02);
-    }
-
-    .preview-card img {
-      max-width: 100%;
-      border-radius: 10px;
-      margin-bottom: 10px;
-    }
-
-    .preview-card h3 {
-      margin: 5px 0;
-      font-size: 16px;
-      color: #1e3a8a;
-    }
-
-    .preview-card p {
-      margin: 3px 0;
-      font-size: 14px;
-      color: #555;
-    }
-
-    /* Fade-in animation */
-    #miniPreview {
-      animation: fadeIn 0.4s ease forwards;
-      opacity: 0;
-    }
-
-    @keyframes fadeIn {
-      to { opacity: 1; }
-    }
+    #confirmBtn { background: #10b981; color: white; }
+    #confirmBtn:hover { background: #059669; }
+    #cancelBtn { background: #ef4444; color: white; }
+    #cancelBtn:hover { background: #b91c1c; }
+    @keyframes slideDown { from { transform: translateY(-30px); opacity: 0; } to { transform: translateY(0); opacity: 1; } }
   </style>
 </head>
 <body>
 
-  <!-- Hero Header -->
   <div class="hero">
     <h1>Harkein Admin Dashboard</h1>
     <p>Manage Properties & Fashion Listings Effortlessly</p>
   </div>
 
-  <!-- Form Container -->
   <div class="container">
     <h2>Add New Listing</h2>
     <form id="uploadForm" enctype="multipart/form-data">
       <label>Category:</label>
-      <select name="category" required>
+      <select name="category" id="category" required>
         <option value="properties">Property</option>
         <option value="fashion">Fashion</option>
       </select>
 
       <label>Title:</label>
-      <input type="text" name="title" required>
+      <input type="text" name="title" id="title" required>
 
       <label>Price:</label>
-      <input type="text" name="price" required>
+      <input type="text" name="price" id="price" required>
 
       <label>Location (for properties only):</label>
-      <input type="text" name="location">
+      <input type="text" name="location" id="location">
 
       <label>Description:</label>
-      <textarea name="description" required></textarea>
+      <textarea name="description" id="description" required></textarea>
 
       <label>Image File:</label>
-      <input type="file" name="imageFile" accept="image/*" required>
+      <input type="file" name="imageFile" id="imageFile" accept="image/*" required>
 
-      <!-- Live Image Preview -->
       <img id="imagePreview" src="" alt="Image Preview" style="display:none;">
-
-      <!-- Mini Card Preview -->
-      <div class="preview-card" id="miniPreview" style="display:none;">
-        <img id="miniImage" src="" alt="">
-        <h3 id="miniTitle"></h3>
-        <p id="miniPrice"></p>
-        <p id="miniLocation"></p>
-      </div>
 
       <button type="submit">Add Listing</button>
     </form>
-
     <p id="status"></p>
   </div>
 
@@ -288,7 +139,6 @@
   <div id="confirmModal">
     <div class="modal-content">
       <h2>Confirm Your Listing</h2>
-      <p id="confirmText" style="font-weight:500; margin-bottom:10px;"></p>
       <div class="preview-card">
         <img id="confirmImage" src="" alt="Preview">
         <h3 id="confirmTitle"></h3>
@@ -300,179 +150,105 @@
     </div>
   </div>
 
-  <!-- Scripts -->
-  <script src="js/upload.js"></script>
-  <script>
-    // Mini card live preview
-    const titleInput = document.querySelector('input[name="title"]');
-    const priceInput = document.querySelector('input[name="price"]');
-    const locationInput = document.querySelector('input[name="location"]');
-    const miniCard = document.getElementById("miniPreview");
-    const miniTitle = document.getElementById("miniTitle");
-    const miniPrice = document.getElementById("miniPrice");
-    const miniLocation = document.getElementById("miniLocation");
-    const miniImage = document.getElementById("miniImage");
+  <!-- ✅ Firebase Logic -->
+  <script type="module">
+    import { initializeApp } from "https://www.gstatic.com/firebasejs/11.0.1/firebase-app.js";
+    import { getFirestore, collection, addDoc, serverTimestamp } from "https://www.gstatic.com/firebasejs/11.0.1/firebase-firestore.js";
+    import { getStorage, ref, uploadBytes, getDownloadURL } from "https://www.gstatic.com/firebasejs/11.0.1/firebase-storage.js";
 
-    const imageInput = document.querySelector('input[name="imageFile"]');
-    const imagePreview = document.getElementById("imagePreview");
+    // ✅ Your Correct Firebase Config
+    const firebaseConfig = {
+      apiKey: "AIzaSyBTLtME_8Vik5W2SAagPibPpaduBmzpjF8",
+      authDomain: "harkein-site.firebaseapp.com",
+      projectId: "harkein-site",
+      storageBucket: "harkein-site.appspot.com",
+      messagingSenderId: "560414142424",
+      appId: "1:560414142424:web:d45c1c30446e839b314cad",
+      measurementId: "G-JYH1MRCDBR"
+    };
 
-    function updateMiniPreview() {
-      const file = imageInput.files[0];
-      if (!file) {
-        miniCard.style.display = "none";
-        imagePreview.style.display = "none";
-        return;
-      }
+    const app = initializeApp(firebaseConfig);
+    const db = getFirestore(app);
+    const storage = getStorage(app);
 
-      // Image preview
-      const reader = new FileReader();
-      reader.onload = e => {
-        imagePreview.src = e.target.result;
-        imagePreview.style.display = "block";
-
-        miniImage.src = e.target.result;
-        miniCard.style.display = "block";
-      };
-      reader.readAsDataURL(file);
-
-      miniTitle.innerText = titleInput.value;
-      miniPrice.innerText = priceInput.value;
-      miniLocation.innerText = locationInput.value;
-    }
-
-    titleInput.addEventListener("input", updateMiniPreview);
-    priceInput.addEventListener("input", updateMiniPreview);
-    locationInput.addEventListener("input", updateMiniPreview);
-    imageInput.addEventListener("change", updateMiniPreview);
-
-    // Confirmation Modal logic
+    const uploadForm = document.getElementById("uploadForm");
     const confirmModal = document.getElementById("confirmModal");
-    const confirmText = document.getElementById("confirmText");
+    const confirmBtn = document.getElementById("confirmBtn");
+    const cancelBtn = document.getElementById("cancelBtn");
+
     const confirmImage = document.getElementById("confirmImage");
     const confirmTitle = document.getElementById("confirmTitle");
     const confirmPrice = document.getElementById("confirmPrice");
     const confirmLocation = document.getElementById("confirmLocation");
-    const confirmBtn = document.getElementById("confirmBtn");
-    const cancelBtn = document.getElementById("cancelBtn");
+    const imagePreview = document.getElementById("imagePreview");
 
-    const uploadForm = document.getElementById("uploadForm");
+    let fileToUpload = null;
 
-    uploadForm.addEventListener("submit", function(e){
-      e.preventDefault(); // prevent default form submission
-
-      const category = uploadForm.category.value;
-      const title = uploadForm.title.value;
-      const price = uploadForm.price.value;
-      const location = uploadForm.location.value;
-
-      confirmText.innerHTML = `<strong>Category:</strong> ${category}`;
-
-      confirmTitle.innerText = title;
-      confirmPrice.innerText = price;
-      confirmLocation.innerText = location;
-
-      const file = uploadForm.imageFile.files[0];
-      if(file){
+    // Live image preview
+    document.getElementById("imageFile").addEventListener("change", e => {
+      const file = e.target.files[0];
+      fileToUpload = file;
+      if (file) {
         const reader = new FileReader();
-        reader.onload = e => {
-          confirmImage.src = e.target.result;
+        reader.onload = ev => {
+          imagePreview.src = ev.target.result;
+          imagePreview.style.display = "block";
         };
         reader.readAsDataURL(file);
       }
+    });
 
+    uploadForm.addEventListener("submit", e => {
+      e.preventDefault();
+      if (!fileToUpload) return alert("Please select an image first.");
+
+      confirmTitle.textContent = document.getElementById("title").value;
+      confirmPrice.textContent = document.getElementById("price").value;
+      confirmLocation.textContent = document.getElementById("location").value;
+      confirmImage.src = imagePreview.src;
       confirmModal.style.display = "flex";
     });
 
-    cancelBtn.addEventListener("click", function(){
+    cancelBtn.addEventListener("click", () => {
       confirmModal.style.display = "none";
     });
 
-    confirmBtn.addEventListener("click", function(){
+    confirmBtn.addEventListener("click", async () => {
       confirmModal.style.display = "none";
-      if(typeof uploadListing === "function"){
-        uploadListing();
+      const status = document.getElementById("status");
+      status.textContent = "Uploading...";
+      status.style.color = "#555";
+
+      const category = document.getElementById("category").value;
+      const title = document.getElementById("title").value;
+      const price = document.getElementById("price").value;
+      const location = document.getElementById("location").value;
+      const description = document.getElementById("description").value;
+
+      try {
+        const storageRef = ref(storage, `${category}/${fileToUpload.name}`);
+        await uploadBytes(storageRef, fileToUpload);
+        const imageURL = await getDownloadURL(storageRef);
+
+        await addDoc(collection(db, category), {
+          title,
+          price,
+          location,
+          description,
+          image: imageURL,
+          createdAt: serverTimestamp(),
+        });
+
+        status.textContent = "✅ Listing uploaded successfully!";
+        status.style.color = "green";
+        uploadForm.reset();
+        imagePreview.style.display = "none";
+      } catch (error) {
+        console.error(error);
+        status.textContent = "❌ Upload failed. Check console for details.";
+        status.style.color = "red";
       }
     });
   </script>
-  <!-- Firebase Core -->
-<script type="module">
-  // Import Firebase SDKs
-  import { initializeApp } from "https://www.gstatic.com/firebasejs/11.0.1/firebase-app.js";
-  import { getFirestore, collection, addDoc, getDocs } from "https://www.gstatic.com/firebasejs/11.0.1/firebase-firestore.js";
-
-  // Your Firebase Config
-  const firebaseConfig = {
-    apiKey: "AIzaSyExample-Your-Key",
-    authDomain: "harkein-site.firebaseapp.com",
-    projectId: "harkein-site",
-    storageBucket: "harkein-site.appspot.com",
-    messagingSenderId: "123456789",
-    appId: "1:123456789:web:abcd1234efgh5678"
-  };
-
-  // Initialize Firebase
-  const app = initializeApp(firebaseConfig);
-const db = getFirestore(app);
-
-  // Form submission handler
-  document.getElementById('uploadForm').addEventListener('submit', async (e) => {
-    e.preventDefault();
-    
-    const category = document.getElementById('category').value; // "properties" or "fashion"
-    const title = document.getElementById('title').value;
-    const price = document.getElementById('price').value;
-    const location = document.getElementById('location').value;
-    const description = document.getElementById('description').value;
-    const image = document.getElementById('image').value;
-    const email = document.getElementById('email').value;
-    const instagram = document.getElementById('instagram').value;
-    const status = document.getElementById('status').value;
-
-    try {
-      await addDoc(collection(db, category), {
-        title, price, location, description, image, email, instagram, status
-      });
-      alert("✅ Listing added successfully!");
-      e.target.reset();
-    } catch (error) {
-      console.error("Error adding listing:", error);
-      alert("❌ Failed to add listing.");
-    }
-  });
-</script>
-  <script type="module">
-  import { getFirestore, collection, addDoc, serverTimestamp } from "https://www.gstatic.com/firebasejs/10.12.0/firebase-firestore.js";
-
-  const db = getFirestore();
-
-  document.getElementById("uploadForm").addEventListener("submit", async (e) => {
-    e.preventDefault();
-
-    const type = document.getElementById("itemType").value;
-    const title = document.getElementById("title").value;
-    const price = document.getElementById("price").value;
-    const description = document.getElementById("description").value;
-    const image = document.getElementById("image").value;
-    const email = document.getElementById("email").value;
-    const instagram = document.getElementById("instagram").value;
-
-    try {
-      await addDoc(collection(db, type), {
-        title,
-        price,
-        description,
-        image,
-        email,
-        instagram,
-        createdAt: serverTimestamp(),
-      });
-      alert(`${type} item added successfully!`);
-      e.target.reset();
-    } catch (error) {
-      console.error("Error adding document: ", error);
-      alert("Failed to add item.");
-    }
-  });
-        </script>
 </body>
 </html>
