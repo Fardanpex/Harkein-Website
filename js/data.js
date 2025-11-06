@@ -3,48 +3,63 @@
 // =============================
 
 // 🏠 Properties listings
-const properties = [
+const propertiesData = [
   {
     title: "Luxury Villa with Pool",
     price: "$850,000",
     location: "Lekki, Lagos",
     description: "A modern 5-bedroom villa with swimming pool and ocean view.",
-    image: "images/villa.jpg"
+    image: "images/villa.jpg",
+    email: "folaranmihussein@gmail.com",
+    instagram: "https://instagram.com/harkein_ein",
+    status: "For Sale"
   },
   {
     title: "3-Bedroom Apartment",
     price: "$320,000",
     location: "Ikeja, Lagos",
     description: "Stylish apartment with large windows, balcony, and parking space.",
-    image: "images/apartment.jpg"
+    image: "images/apartment.jpg",
+    email: "folaranmihussein@gmail.com",
+    instagram: "https://instagram.com/harkein_ein",
+    status: "For Sale"
   },
   {
     title: "Office Space Downtown",
     price: "$2000/month",
     location: "Abuja, Nigeria",
     description: "Fully furnished office space with high-speed internet.",
-    image: "images/office.jpg"
+    image: "images/office.jpg",
+    email: "folaranmihussein@gmail.com",
+    instagram: "https://instagram.com/harkein_ein",
+    status: "For Rent"
   }
 ];
 
 // 👗 Fashion products
-const fashion = [
+const fashionData = [
   {
     title: "Men’s Premium Suit",
     price: "$220",
     description: "Tailored two-piece suit in deep navy with slim fit design.",
-    image: "images/suit.jpg"
+    image: "images/suit.jpg",
+    email: "folaranmihussein@gmail.com",
+    instagram: "https://instagram.com/harkein_ein"
   },
   {
     title: "Luxury Handbag",
     price: "$150",
     description: "Leather handbag with gold chain strap, perfect for formal wear.",
-    image: "images/handbag.jpg"
+    image: "images/handbag.jpg",
+    email: "folaranmihussein@gmail.com",
+    instagram: "https://instagram.com/harkein_ein"
   },
   {
     title: "Designer Sneakers",
     price: "$120",
     description: "Stylish and comfortable sneakers for casual occasions.",
-    image: "images/sneakers.jpg"
+    image: "images/sneakers.jpg",
+    email: "folaranmihussein@gmail.com",
+    instagram: "https://instagram.com/harkein_ein"
   }
 ];
