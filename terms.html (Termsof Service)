@@ -1,0 +1,72 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Terms of Service — Harkein Synergies</title>
+  <link rel="icon" href="https://i.ibb.co/RpKv1djv/file-0000000043cc620a9e2842b1759c4eac-conversation-id-681fc7fd-2814-800f-981e-7caabb6ca2dd-message-i.png" type="image/png">
+  <style>
+    /* CORPORATE THEME */
+    :root{ --navy: #0f172a; --gold: #d4af37; --text: #334155; --white: #ffffff; }
+    body{font-family: 'Helvetica Neue', Arial, sans-serif; margin:0; background:var(--white); color:var(--text); line-height: 1.6;}
+    
+    header{background: rgba(15, 23, 42, 0.98); color:white; padding: 15px 0; border-bottom: 3px solid var(--gold);}
+    .container{max-width:1000px; margin:0 auto; padding:0 20px;}
+    .logo-img img { height: 40px; border: 2px solid var(--gold); border-radius: 4px; }
+    
+    h1 { color: var(--navy); border-bottom: 2px solid var(--gold); padding-bottom: 10px; display: inline-block; }
+    h2 { color: var(--navy); margin-top: 30px; }
+    p, li { font-size: 15px; color: #444; margin-bottom: 15px; }
+    ul { margin-left: 20px; }
+
+    .legal-content { background: #f8fafc; padding: 40px; border-radius: 8px; margin: 40px auto; border: 1px solid #e2e8f0; }
+    .update-date { color: #888; font-size: 13px; font-style: italic; }
+
+    footer{background:#0b1120; color:rgba(255,255,255,0.6); padding:40px 0; font-size: 14px; text-align: center; margin-top: 50px;}
+    footer a { color: var(--gold); text-decoration: none; }
+  </style>
+</head>
+<body>
+
+  <header>
+    <div class="container" style="display:flex; justify-content:space-between; align-items:center;">
+      <a href="index.html" class="logo-img"><img src="9227.jpg" alt="HARKEIN SYNERGIES"></a>
+      <a href="index.html" style="color:white; text-decoration:none; font-weight:bold;">RETURN HOME</a>
+    </div>
+  </header>
+
+  <div class="container legal-content">
+    <h1>Terms of Service</h1>
+    <p class="update-date">Effective Date: December 2025</p>
+
+    <p>Welcome to Harkein Synergies. By engaging our services in Logistics, Real Estate, Fashion, or General Trading, you agree to the following terms.</p>
+
+    <h2>1. General Trading & Procurement</h2>
+    <p>All procurement orders are subject to a formal Purchase Order (PO). Prices for commodities and imported goods fluctuate based on global market rates and foreign exchange volatility. Harkein Synergies reserves the right to adjust quotes prior to final invoice issuance.</p>
+
+    <h2>2. Logistics & Shipping Policy</h2>
+    <p>International shipments are governed by the standard <strong>International Commercial Terms (Incoterms® 2020)</strong> as agreed upon in the specific contract (e.g., FOB, CIF, EXW).</p>
+    <ul>
+        <li>Harkein Synergies is not liable for delays caused by "Force Majeure" events (e.g., natural disasters, war, port strikes, or customs seizures beyond our control).</li>
+        <li>Clients are responsible for ensuring all goods comply with the import laws of the destination country.</li>
+    </ul>
+
+    <h2>3. Real Estate Disclaimers</h2>
+    <p>Property listings are subject to availability. While we conduct due diligence, all properties are sold or leased "as-is." Clients are advised to conduct independent verification and legal searches before finalizing transactions.</p>
+
+    <h2>4. Limitation of Liability</h2>
+    <p>To the maximum extent permitted by applicable law, Harkein Synergies shall not be liable for indirect, incidental, or consequential damages arising from the use of our services or website.</p>
+
+    <h2>5. Governing Law & Dispute Resolution</h2>
+    <p>These Terms shall be governed by the laws of the <strong>Federal Republic of Nigeria</strong>. Any disputes arising from international trade transactions shall be resolved through amicable negotiation, failing which, the matter shall be referred to Arbitration in accordance with the Arbitration and Conciliation Act.</p>
+
+    <h2>6. Contact</h2>
+    <p>For legal inquiries, please contact: <a href="mailto:infoharkein@gmail.com">infoharkein@gmail.com</a></p>
+  </div>
+
+  <footer>
+    <p>&copy; 2025 Harkein Synergies. All Rights Reserved.</p>
+  </footer>
+
+</body>
+</html>
