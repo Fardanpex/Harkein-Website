@@ -25,7 +25,7 @@
     
     /* LOGO STYLES */
     .logo-img img {
-      height: 45px;
+      height: 70px; /* FIXED: Increased size */
       width: auto;
       border-radius: 4px;
       border: 2px solid var(--gold);
@@ -80,18 +80,6 @@
     .division-overlay p { color: rgba(255,255,255,0.8); margin: 0 0 20px; font-size: 15px; }
     .division-link { color: var(--gold); text-decoration: none; font-weight: 700; text-transform: uppercase; font-size: 13px; letter-spacing: 1px; }
 
-    /* GENERAL TRADING */
-    .trading-item { background: white; padding: 30px; border-radius: 8px; border-left: 4px solid var(--gold); box-shadow: 0 4px 12px rgba(0,0,0,0.05); }
-
-    /* CONTACT SECTION */
-    .contact-section { background: var(--navy); color: white; }
-    .contact-form { max-width: 600px; margin: 0 auto; background: white; padding: 40px; border-radius: 8px; box-shadow: 0 20px 40px rgba(0,0,0,0.2); }
-    input, textarea, select { width: 100%; padding: 15px; border: 1px solid #e2e8f0; border-radius: 4px; margin-bottom: 15px; font-family: inherit; background: #f8fafc; }
-    button[type=submit] { background: var(--navy); color: white; border: none; padding: 15px 30px; border-radius: 4px; font-weight: 800; cursor: pointer; width: 100%; transition: 0.3s; }
-    button[type=submit]:hover { background: var(--gold); color: var(--navy); }
-    .contact-info { text-align: center; margin-top: 30px; color: rgba(255,255,255,0.7); }
-    .contact-info a { color: var(--gold); text-decoration: none; }
-
     /* FOOTER */
     footer{background:#0b1120; color:rgba(255,255,255,0.6); padding:60px 0; font-size: 14px;}
     .footer-content { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 40px; }
@@ -118,10 +106,11 @@
         <img src="9227.jpg" alt="HARKEIN SYNERGIES">
       </a>
       <nav>
-        <a href="#about">About Us</a>
+        <a href="index.html" style="color:var(--gold);">Home</a>
+        <a href="about.html">About Us</a>
         <a href="#divisions">Sectors</a>
-        <a href="#trading">Procurement</a>
-        <a href="#contact" class="nav-btn">Contact Us</a>
+        <a href="procurement.html">Procurement</a>
+        <a href="contact.html" class="nav-btn">Contact Us</a>
       </nav>
     </div>
   </header>
@@ -133,7 +122,7 @@
             <div class="hero-content">
                 <h1>HARKEIN SYNERGIES</h1>
                 <p>Innovation for a Connected World.</p>
-                <a class="btn btn-primary" href="#about">Our Corporate Profile</a>
+                <a class="btn btn-primary" href="about.html">Our Corporate Profile</a>
             </div>
         </div>
       </div>
@@ -146,17 +135,13 @@
                 <div style="width: 50px; height: 3px; background: var(--gold); margin-bottom: 20px;"></div>
                 <p>Harkein Synergies was established with a singular mandate: to bridge the gap between quality, efficiency, and global standards in the Nigerian market.</p>
                 <p>Starting as a focused trading entity, we have evolved into a dynamic conglomerate with diversified interests in Real Estate Development, High-End Fashion, and Global Logistics.</p>
-                <p>Today, Harkein Synergies stands as a beacon of reliability, leveraging international partnerships to deliver value across multiple sectors.</p>
+                <a href="about.html" style="color: var(--navy); font-weight: bold; text-decoration: none;">Read Full Profile →</a>
             </div>
             
             <div>
                 <div class="vision-box">
                     <h3>🎯 Our Mission</h3>
                     <p>To provide seamless, high-value solutions in real estate, fashion, and general trade by combining integrity, innovation, and operational excellence.</p>
-                </div>
-                <div class="vision-box">
-                    <h3>👁️ Our Vision</h3>
-                    <p>To be the leading multi-sector conglomerate in Nigeria, recognized globally for quality service and sustainable business practices.</p>
                 </div>
             </div>
         </div>
@@ -175,7 +160,7 @@
                 <h3 style="margin: 0; color: var(--navy);">Folaranmi Hussein</h3>
                 <div class="team-role">Chief Executive Officer</div>
                 <p style="font-size: 14px; color: #666; margin-top: 10px;">
-                    A visionary leader with deep expertise in international trade and business development, overseeing the strategic direction of Harkein Synergies.
+                    A visionary leader with deep expertise in international trade and business development.
                 </p>
             </div>
         </div>
@@ -211,41 +196,10 @@
             <div class="division-overlay">
                 <h3>Global Logistics</h3>
                 <p>Freight forwarding and port operations.</p>
-                <a href="#contact" class="division-link">Contact Dept →</a>
+                <a href="contact.html" class="division-link">Contact Dept →</a>
             </div>
         </div>
       </div>
-    </section>
-
-    <section id="trading" class="container" style="background: #f8fafc;">
-        <div class="section-header">
-            <h2>General Trading & Procurement</h2>
-            <div class="line"></div>
-            <p style="margin-top: 15px; max-width: 700px; margin-left: auto; margin-right: auto;">
-                Beyond our core sectors, Harkein Synergies serves as a trusted general contractor and procurement partner for government and private institutions.
-            </p>
-        </div>
-
-        <div class="grid">
-            <div class="trading-item">
-                <h3 style="color: var(--navy); margin-top: 0;">📦 General Contracts</h3>
-                <p style="font-size: 14px; color: #666;">
-                    Supply of general merchandise, office equipment, and industrial tools. We ensure quality delivery on tight deadlines.
-                </p>
-            </div>
-            <div class="trading-item">
-                <h3 style="color: var(--navy); margin-top: 0;">🏗️ Project Procurement</h3>
-                <p style="font-size: 14px; color: #666;">
-                    Sourcing construction materials and heavy machinery for large-scale development projects.
-                </p>
-            </div>
-            <div class="trading-item">
-                <h3 style="color: var(--navy); margin-top: 0;">🤝 Import Consultancy</h3>
-                <p style="font-size: 14px; color: #666;">
-                    Guiding clients through international trade laws, customs documentation, and supplier verification.
-                </p>
-            </div>
-        </div>
     </section>
 
     <section class="container" style="text-align: center; padding-top: 20px; padding-bottom: 80px;">
@@ -271,53 +225,15 @@
                 <h4 style="margin: 0 0 10px; color: var(--navy);">🌍 Do you handle international shipping?</h4>
                 <p style="margin: 0; font-size: 14px; color: #666;">Yes. Our Logistics division handles freight forwarding, customs clearance, and door-to-door delivery from major global hubs (China, UK, USA) to Nigeria.</p>
             </div>
-
             <div style="background: #f8fafc; padding: 20px; border-radius: 8px; margin-bottom: 15px; border-left: 4px solid var(--gold);">
                 <h4 style="margin: 0 0 10px; color: var(--navy);">🏠 How can I verify your property listings?</h4>
                 <p style="margin: 0; font-size: 14px; color: #666;">Transparency is our core value. We encourage all clients to schedule a physical inspection. We also provide copies of all relevant title documents (C of O, Governor's Consent) for your legal verification.</p>
             </div>
-
-            <div style="background: #f8fafc; padding: 20px; border-radius: 8px; margin-bottom: 15px; border-left: 4px solid var(--navy);">
-                <h4 style="margin: 0 0 10px; color: var(--navy);">👗 specific Request or Custom Orders?</h4>
-                <p style="margin: 0; font-size: 14px; color: #666;">Absolutely. For Harkein Fashion, we offer bespoke tailoring services. For General Trading, we accept procurement contracts for specific industrial equipment or goods.</p>
-            </div>
         </div>
-    </section>
-
-    <section id="contact" class="contact-section">
-      <div class="container">
-        <div class="section-header">
-            <h2 style="color: white;">Partner With Us</h2>
-            <div class="line" style="background: white;"></div>
-            <p style="margin-top: 15px; opacity: 0.8;">Headquarters</p>
+        
+        <div style="text-align: center; margin-top: 40px;">
+            <a href="contact.html" class="btn btn-primary">Partner With Us Today</a>
         </div>
-
-        <form id="contactForm" action="https://formspree.io/f/movpgwpy" method="POST" class="contact-form">
-          <label for="name">Full Name / Company Name</label>
-          <input type="text" id="name" name="name" placeholder="Enter name" required>
-
-          <label for="department">Department of Interest</label>
-          <select name="department">
-              <option value="General">General Inquiry</option>
-              <option value="Procurement">General Merchandise/Contracts</option>
-              <option value="Real Estate">Real Estate</option>
-              <option value="Fashion">Fashion</option>
-          </select>
-
-          <label for="email">Email Address</label>
-          <input type="email" id="email" name="_replyto" placeholder="Enter email" required>
-
-          <label for="message">Message</label>
-          <textarea id="message" name="message" rows="5" placeholder="How can we help you?" required></textarea>
-
-          <button type="submit">Send Message</button>
-        </form>
-
-        <div class="contact-info">
-            <p>Email: <a href="mailto:infoharkein@gmail.com">infoharkein@gmail.com</a></p>
-            <p>Instagram: <a href="https://instagram.com/harkein_synergies" target="_blank">@harkein_synergies</a></p>
-        </div>
-      </div>
     </section>
 
   </main>
@@ -327,17 +243,13 @@
         <div class="footer-col">
             <h4>Harkein Synergies</h4>
             <p>A multi-sector conglomerate dedicated to excellence in Logistics, Real Estate, and Fashion.</p>
-            <p>&copy; 2025 Harkein Synergies.</p>
-            <p style="font-size: 12px; margin-top: 10px;">
-                <a href="privacy.html">Privacy Policy</a> | <a href="terms.html">Terms of Service</a>
-            </p>
         </div>
         <div class="footer-col">
             <h4>Corporate</h4>
             <ul>
-                <li><a href="#about">About Us</a></li>
-                <li><a href="#trading">General Trading</a></li>
-                <li><a href="#contact">Contact</a></li>
+                <li><a href="about.html">About Us</a></li>
+                <li><a href="procurement.html">General Trading</a></li>
+                <li><a href="contact.html">Contact</a></li>
             </ul>
         </div>
         <div class="footer-col">
@@ -345,40 +257,26 @@
             <ul>
                 <li><a href="properties.html">Properties</a></li>
                 <li><a href="fashion.html">Fashion</a></li>
-                <li><a href="#contact">Logistics</a></li>
+                <li><a href="contact.html">Logistics</a></li>
             </ul>
         </div>
         <div class="footer-col">
             <h4>Connect</h4>
-            <p>Email: <a href="mailto:infoharkein@gmail.com">infoharkein@gmail.com</a></p>
-            <p>IG: <a href="https://instagram.com/harkein_synergies" target="_blank" style="color:var(--gold)">@harkein_synergies</a></p>
+            <p>&copy; 2025 Harkein Synergies.</p>
+            <p style="font-size: 12px; margin-top: 10px;">
+                <a href="privacy.html">Privacy Policy</a> | <a href="terms.html">Terms of Service</a>
+            </p>
         </div>
     </div>
   </footer>
 
   <script>
-    // Slider Logic
     const slides = document.querySelectorAll('.slide');
     const slidesContainer = document.querySelector('.slides');
     let index = 0;
     function showSlide(i){ slidesContainer.style.transform = 'translateX(' + (-100 * i) + '%)'; }
     setInterval(()=>{ index = (index+1)%slides.length; showSlide(index); }, 6000);
 
-    // Form Logic
-    const form = document.getElementById("contactForm");
-    form.addEventListener("submit", async (e) => {
-      e.preventDefault();
-      const btn = form.querySelector('button');
-      btn.innerText = "Sending...";
-      btn.disabled = true;
-      try {
-          const response = await fetch(form.action, { method: "POST", body: new FormData(form), headers: { "Accept": "application/json" } });
-          if (response.ok) { window.location.href = "thankyou.html"; } 
-          else { alert("Error sending message."); btn.innerText = "Send Message"; btn.disabled = false; }
-      } catch (error) { alert("Network error."); btn.innerText = "Send Message"; btn.disabled = false; }
-    });
-
-    // Smooth Scrolling
     document.querySelectorAll('a[href^="#"]').forEach(a=>{
       a.addEventListener('click', function(e){
         const target = document.querySelector(this.getAttribute('href'));
