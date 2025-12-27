@@ -1,0 +1,184 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>About Us — Harkein Synergies</title>
+  <link rel="icon" href="https://i.ibb.co/RpKv1djv/file-0000000043cc620a9e2842b1759c4eac-conversation-id-681fc7fd-2814-800f-981e-7caabb6ca2dd-message-i.png" type="image/png">
+  <style>
+    /* CORPORATE THEME */
+    :root{ --navy: #0f172a; --gold: #d4af37; --grey: #f8fafc; --text: #334155; --white: #ffffff; }
+    *{box-sizing:border-box}
+    body{font-family: 'Helvetica Neue', 'Segoe UI', Arial, sans-serif; margin:0; background:var(--white); color:var(--text); line-height: 1.6;}
+
+    /* HEADER */
+    header{background: rgba(15, 23, 42, 0.98); backdrop-filter: blur(10px); color:white; position:sticky; top:0; z-index:1000; border-bottom: 3px solid var(--gold);}
+    .container{max-width:1200px; margin:0 auto; padding:0 20px;}
+    .topbar{display:flex; align-items:center; justify-content:space-between; padding:15px 0;}
+    
+    .logo-img img { height: 45px; width: auto; border-radius: 4px; border: 2px solid var(--gold); margin-top: 5px; }
+
+    nav a{color:white; text-decoration:none; margin-left:25px; font-weight:500; font-size: 14px; text-transform: uppercase; letter-spacing: 0.5px; transition: 0.3s;}
+    nav a:hover { color: var(--gold); }
+    .nav-btn { border: 1px solid var(--gold); padding: 8px 16px; border-radius: 4px; color: var(--gold) !important; }
+    .nav-btn:hover { background: var(--gold); color: var(--navy) !important; }
+
+    /* HERO */
+    .page-hero { height: 50vh; background-image: url('https://images.unsplash.com/photo-1497366216548-37526070297c?auto=format&fit=crop&w=1600&q=80'); background-size: cover; background-position: center; display: flex; align-items: center; justify-content: center; position: relative; }
+    .page-hero::after { content:''; position:absolute; inset:0; background: rgba(15,23,42,0.85); }
+    .hero-text { position: relative; z-index: 2; text-align: center; color: white; max-width: 800px; padding: 20px; }
+    .hero-text h1 { font-size: 48px; margin: 0; font-weight: 800; letter-spacing: 1px; }
+    .hero-text p { font-size: 18px; color: var(--gold); margin-top: 15px; }
+
+    /* CONTENT SECTIONS */
+    section { padding: 80px 0; }
+    
+    .story-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 60px; align-items: center; }
+    .story-img img { width: 100%; border-radius: 8px; box-shadow: 0 20px 40px rgba(0,0,0,0.1); }
+    
+    .values-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 30px; margin-top: 40px; }
+    .value-card { background: var(--grey); padding: 30px; border-radius: 8px; border-top: 4px solid var(--gold); }
+    .value-card h3 { color: var(--navy); margin-top: 0; }
+
+    /* LEADERSHIP */
+    .leadership-section { background: var(--navy); color: white; text-align: center; }
+    .leader-card { background: white; color: var(--text); max-width: 400px; margin: 40px auto 0; border-radius: 8px; overflow: hidden; }
+    .leader-img { width: 100%; height: 400px; object-fit: cover; object-position: top; }
+    .leader-info { padding: 30px; }
+    .leader-role { color: var(--gold); font-weight: 700; text-transform: uppercase; font-size: 13px; letter-spacing: 1px; }
+
+    /* FOOTER */
+    footer{background:#0b1120; color:rgba(255,255,255,0.6); padding:60px 0; font-size: 14px;}
+    .footer-content { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 40px; }
+    .footer-col h4 { color: white; margin-bottom: 20px; text-transform: uppercase; letter-spacing: 1px; }
+    .footer-col ul { list-style: none; padding: 0; }
+    .footer-col ul li { margin-bottom: 10px; }
+    .footer-col a { color: rgba(255,255,255,0.6); text-decoration: none; transition: 0.3s; }
+    .footer-col a:hover { color: var(--gold); }
+
+    @media(max-width:768px){ 
+        .topbar { flex-direction: column; gap: 15px; } 
+        nav { display: flex; flex-wrap: wrap; justify-content: center; gap: 15px; } nav a { margin: 0; }
+        .story-grid { grid-template-columns: 1fr; }
+        .hero-text h1 { font-size: 36px; }
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <div class="container topbar">
+      <a href="index.html" class="logo-img">
+        <img src="9227.jpg" alt="HARKEIN SYNERGIES">
+      </a>
+      <nav>
+        <a href="index.html">Home</a>
+        <a href="index.html#divisions">Our Businesses</a>
+        <a href="index.html#trading">Procurement</a>
+        <a href="index.html#contact" class="nav-btn">Contact Us</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <div class="page-hero">
+        <div class="hero-text">
+            <h1>CORPORATE PROFILE</h1>
+            <p>Building a Legacy of Excellence Across Borders.</p>
+        </div>
+    </div>
+
+    <section class="container">
+        <div class="story-grid">
+            <div class="story-content">
+                <h2 style="color: var(--navy); font-size: 32px; margin-bottom: 20px;">Who We Are</h2>
+                <div style="width: 60px; height: 4px; background: var(--gold); margin-bottom: 30px;"></div>
+                
+                <p><strong>Harkein Synergies</strong> is a dynamic Nigerian conglomerate with a global outlook. Established to bridge the gap between international markets and local demands, we have grown into a multi-faceted organization with dominant interests in Logistics, Real Estate, and Luxury Fashion.</p>
+                <p>We believe in the power of <em>synergy</em>—combining expertise from different sectors to create value that is greater than the sum of its parts.</p>
+                <p>Whether we are clearing complex cargo at the port, developing premium residential estates, or curating high-end fashion, our signature is <strong>Uncompromised Quality</strong>.</p>
+            </div>
+            <div class="story-img">
+                <img src="https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&w=800&q=80" alt="Corporate Office">
+            </div>
+        </div>
+    </section>
+
+    <section style="background: #f8fafc;">
+        <div class="container">
+            <div style="text-align: center; max-width: 800px; margin: 0 auto;">
+                <h2 style="color: var(--navy);">Our Core Philosophy</h2>
+                <div style="width: 50px; height: 3px; background: var(--gold); margin: 15px auto 40px;"></div>
+            </div>
+
+            <div class="values-grid">
+                <div class="value-card">
+                    <h3>🎯 Our Mission</h3>
+                    <p>To deliver world-class solutions in trade and infrastructure by leveraging global partnerships, operational efficiency, and local expertise.</p>
+                </div>
+                <div class="value-card">
+                    <h3>👁️ Our Vision</h3>
+                    <p>To be the most trusted commercial partner in Nigeria, known for reliability in logistics, integrity in real estate, and excellence in retail.</p>
+                </div>
+                <div class="value-card">
+                    <h3>💎 Our Values</h3>
+                    <p><strong>Integrity:</strong> We keep our promises.<br><strong>Excellence:</strong> We do not settle for average.<br><strong>Synergy:</strong> We work together to win.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="leadership-section">
+        <div class="container">
+            <h2>Our Leadership</h2>
+            <p style="opacity: 0.8; max-width: 600px; margin: 0 auto;">Guided by a commitment to innovation and strategic growth.</p>
+            
+            <div class="leader-card">
+                <img src="https://images.unsplash.com/photo-1560250097-0b93528c311a?auto=format&fit=crop&w=800&q=80" alt="Folaranmi Hussein" class="leader-img">
+                <div class="leader-info">
+                    <h3 style="margin: 0; color: var(--navy); font-size: 24px;">Folaranmi Hussein</h3>
+                    <div class="leader-role">Chief Executive Officer</div>
+                    <p style="margin-top: 15px; font-size: 14px; color: #666;">
+                        As the founder of Harkein Synergies, Mr. Hussein brings a wealth of experience in international trade negotiation and business development. His strategic vision has steered the company's expansion from general trading into specialized sectors including Logistics and Real Estate.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+  </main>
+
+  <footer>
+    <div class="container footer-content">
+        <div class="footer-col">
+            <h4>Harkein Synergies</h4>
+            <p>A multi-sector conglomerate dedicated to excellence in Logistics, Real Estate, and Fashion.</p>
+        </div>
+        <div class="footer-col">
+            <h4>Corporate</h4>
+            <ul>
+                <li><a href="about.html">About Us</a></li>
+                <li><a href="index.html#trading">General Trading</a></li>
+                <li><a href="index.html#contact">Contact</a></li>
+            </ul>
+        </div>
+        <div class="footer-col">
+            <h4>Divisions</h4>
+            <ul>
+                <li><a href="properties.html">Properties</a></li>
+                <li><a href="fashion.html">Fashion</a></li>
+                <li><a href="index.html#contact">Logistics</a></li>
+            </ul>
+        </div>
+        <div class="footer-col">
+            <h4>Connect</h4>
+            <p>&copy; 2025 Harkein Synergies.</p>
+            <p style="font-size: 12px; margin-top: 10px;">
+                <a href="privacy.html">Privacy Policy</a> | <a href="terms.html">Terms of Service</a>
+            </p>
+        </div>
+    </div>
+  </footer>
+
+</body>
+</html>
