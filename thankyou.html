@@ -1,67 +1,112 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Thank You | HARKEIN</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Thank You — Harkein Synergies</title>
   <link rel="icon" href="https://i.ibb.co/RpKv1djv/file-0000000043cc620a9e2842b1759c4eac-conversation-id-681fc7fd-2814-800f-981e-7caabb6ca2dd-message-i.png" type="image/png">
   <style>
-    body {
-      margin: 0;
-      font-family: 'Poppins', sans-serif;
-      background: linear-gradient(to bottom right, #0A1D37, #F8F5F1);
-      color: #fff;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-      height: 100vh;
-      text-align: center;
+    /* SHARED CORPORATE THEME */
+    :root{
+      --navy: #0f172a;       
+      --gold: #d4af37;       
+      --grey: #f8fafc;       
+      --text: #334155;       
+      --white: #ffffff;
     }
-    .container {
-      background: rgba(255,255,255,0.1);
-      padding: 40px;
-      border-radius: 20px;
-      box-shadow: 0 4px 15px rgba(0,0,0,0.3);
-      max-width: 400px;
+    *{box-sizing:border-box}
+    body{font-family: 'Helvetica Neue', 'Segoe UI', Arial, sans-serif; margin:0; background:var(--grey); color:var(--text); line-height: 1.6; display: flex; flex-direction: column; min-height: 100vh;}
+    
+    /* HEADER */
+    header{background: rgba(15, 23, 42, 0.98); backdrop-filter: blur(10px); color:white; border-bottom: 3px solid var(--gold);}
+    .container{max-width:1200px; margin:0 auto; padding:0 20px;}
+    .topbar{display:flex; align-items:center; justify-content:space-between; padding:15px 0;}
+    .logo-text { font-size: 24px; font-weight: 800; color: white; text-transform: uppercase; letter-spacing: 1px; text-decoration: none;}
+    .logo-text span { color: var(--gold); }
+    nav a{color:white; text-decoration:none; margin-left:25px; font-weight:500; font-size: 14px; text-transform: uppercase; letter-spacing: 0.5px; transition: 0.3s;}
+    nav a:hover { color: var(--gold); }
+    
+    /* MAIN CONTENT */
+    main { flex: 1; display: flex; align-items: center; justify-content: center; padding: 60px 20px; }
+    
+    .card {
+        background: white;
+        padding: 60px 40px;
+        border-radius: 8px;
+        box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+        text-align: center;
+        max-width: 600px;
+        width: 100%;
+        border-top: 5px solid var(--gold);
     }
-    h1 {
-      font-size: 2rem;
-      margin-bottom: 10px;
-      color: #F5C518;
+    
+    .icon-check {
+        width: 80px;
+        height: 80px;
+        background: var(--gold);
+        color: var(--navy);
+        border-radius: 50%;
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 40px;
+        margin-bottom: 30px;
     }
-    p {
-      font-size: 1rem;
-      color: #fff;
+    
+    h1 { color: var(--navy); margin: 0 0 15px; font-size: 32px; }
+    p { font-size: 18px; color: #64748b; margin-bottom: 30px; }
+    
+    .btn {
+        display: inline-block;
+        padding: 15px 30px;
+        background: var(--navy);
+        color: white;
+        text-decoration: none;
+        font-weight: 700;
+        border-radius: 4px;
+        transition: 0.3s;
+        text-transform: uppercase;
+        font-size: 14px;
+        letter-spacing: 1px;
     }
-    a {
-      display: inline-block;
-      margin-top: 20px;
-      background: #E63946;
-      color: #fff;
-      padding: 10px 20px;
-      border-radius: 30px;
-      text-decoration: none;
-      font-weight: 500;
-      transition: background 0.3s;
-    }
-    a:hover {
-      background: #f15b6c;
-    }
-    .checkmark {
-      font-size: 3rem;
-      color: #00C853;
-      margin-bottom: 15px;
+    .btn:hover { background: var(--gold); color: var(--navy); }
+
+    /* FOOTER */
+    footer{background:#0b1120; color:rgba(255,255,255,0.6); padding:40px 0; font-size: 14px; text-align: center; margin-top: auto;}
+    
+    @media(max-width:768px){ 
+        .topbar { justify-content: center; }
+        nav { display: none; } /* Hide nav on mobile thank you page to focus on message */
     }
   </style>
 </head>
 <body>
-  <div class="container">
-    <div class="checkmark">✔</div>
-    <h1>Thank You!</h1>
-    <p>Your message has been sent successfully.<br>
-    We’ll get back to you soon.</p>
-    <a href="index.html">Return to Homepage</a>
-  </div>
+
+  <header>
+    <div class="container topbar">
+      <a href="index.html" class="logo-text">HARKEIN <span>SYNERGIES</span></a>
+      <nav>
+        <a href="index.html">Home</a>
+        <a href="index.html#contact">Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <div class="card">
+        <div class="icon-check">✓</div>
+        <h1>Message Received</h1>
+        <p>Thank you for contacting Harkein Synergies. Your inquiry has been routed to the relevant department.</p>
+        <p style="font-size: 14px; margin-top: -20px;">We will respond to your email shortly.</p>
+        <a href="index.html" class="btn">Return to Homepage</a>
+    </div>
+  </main>
+
+  <footer>
+    <div class="container">
+        <p>&copy; 2025 Harkein Synergies. All Rights Reserved.</p>
+    </div>
+  </footer>
+
 </body>
 </html>
