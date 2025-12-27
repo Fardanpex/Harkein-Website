@@ -25,6 +25,14 @@
     .logo-text { font-size: 24px; font-weight: 800; color: white; text-transform: uppercase; letter-spacing: 1px; text-decoration: none;}
     .logo-text span { color: var(--gold); }
     
+        /* NEW LOGO STYLES */
+    .logo-img img {
+      height: 50px;       /* Sets the logo size */
+      width: auto;        /* Keeps the shape correct */
+      border-radius: 4px; /* Slight curve on corners */
+      border: 2px solid var(--gold);
+    }
+    
     nav a{color:white; text-decoration:none; margin-left:25px; font-weight:500; font-size: 14px; text-transform: uppercase; letter-spacing: 0.5px; transition: 0.3s;}
     nav a:hover { color: var(--gold); }
     .nav-btn { border: 1px solid var(--gold); padding: 8px 16px; border-radius: 4px; color: var(--gold) !important; }
@@ -111,7 +119,10 @@
 
   <header>
     <div class="container topbar">
-      <a href="index.html" class="logo-text">HARKEIN <span>SYNERGIES</span></a>
+      <a href="index.html" class="logo-img">
+  <img src="9227.jpg" alt="HARKEIN SYNERGIES">
+</a>
+
       <nav>
         <a href="index.html">Home</a>
         <a href="#about">About Us</a>
