@@ -1,0 +1,78 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Privacy Policy — Harkein Synergies</title>
+  <link rel="icon" href="https://i.ibb.co/RpKv1djv/file-0000000043cc620a9e2842b1759c4eac-conversation-id-681fc7fd-2814-800f-981e-7caabb6ca2dd-message-i.png" type="image/png">
+  <style>
+    /* CORPORATE THEME */
+    :root{ --navy: #0f172a; --gold: #d4af37; --text: #334155; --white: #ffffff; }
+    body{font-family: 'Helvetica Neue', Arial, sans-serif; margin:0; background:var(--white); color:var(--text); line-height: 1.6;}
+    
+    header{background: rgba(15, 23, 42, 0.98); color:white; padding: 15px 0; border-bottom: 3px solid var(--gold);}
+    .container{max-width:1000px; margin:0 auto; padding:0 20px;}
+    .logo-img img { height: 40px; border: 2px solid var(--gold); border-radius: 4px; }
+    
+    h1 { color: var(--navy); border-bottom: 2px solid var(--gold); padding-bottom: 10px; display: inline-block; }
+    h2 { color: var(--navy); margin-top: 30px; }
+    p, li { font-size: 15px; color: #444; margin-bottom: 15px; }
+    ul { margin-left: 20px; }
+
+    .legal-content { background: #f8fafc; padding: 40px; border-radius: 8px; margin: 40px auto; border: 1px solid #e2e8f0; }
+    .update-date { color: #888; font-size: 13px; font-style: italic; }
+
+    footer{background:#0b1120; color:rgba(255,255,255,0.6); padding:40px 0; font-size: 14px; text-align: center; margin-top: 50px;}
+    footer a { color: var(--gold); text-decoration: none; }
+  </style>
+</head>
+<body>
+
+  <header>
+    <div class="container" style="display:flex; justify-content:space-between; align-items:center;">
+      <a href="index.html" class="logo-img"><img src="9227.jpg" alt="HARKEIN SYNERGIES"></a>
+      <a href="index.html" style="color:white; text-decoration:none; font-weight:bold;">RETURN HOME</a>
+    </div>
+  </header>
+
+  <div class="container legal-content">
+    <h1>Privacy Policy</h1>
+    <p class="update-date">Last Updated: December 2025</p>
+
+    <p>Harkein Synergies ("we," "our," or "us") is committed to protecting your privacy. This policy outlines how we collect, use, and safeguard your information in compliance with the <strong>Nigeria Data Protection Regulation (NDPR)</strong> and applicable <strong>International Data Privacy Laws</strong>.</p>
+
+    <h2>1. Information We Collect</h2>
+    <p>To facilitate Global Logistics, Real Estate transactions, and General Trading, we may collect:</p>
+    <ul>
+        <li><strong>Personal Identity Data:</strong> Name, Government ID (for Customs/KYC), and Contact details.</li>
+        <li><strong>Transactional Data:</strong> Payment details, Shipping Manifests, and Property Deeds.</li>
+        <li><strong>Technical Data:</strong> IP addresses and browser cookies for site security.</li>
+    </ul>
+
+    <h2>2. How We Use Your Data</h2>
+    <p>Your data is used strictly for:</p>
+    <ul>
+        <li>Processing international freight and customs clearance.</li>
+        <li>Facilitating real estate transfers and lease agreements.</li>
+        <li>Compliance with Anti-Money Laundering (AML) and Know Your Customer (KYC) regulations.</li>
+    </ul>
+
+    <h2>3. International Data Transfers</h2>
+    <p>Due to the global nature of our Logistics and Trading operations, your data may be transferred to partners (e.g., shipping lines, port authorities) in jurisdictions outside Nigeria. We ensure that such transfers comply with international standards of data adequacy and security.</p>
+
+    <h2>4. Data Security</h2>
+    <p>We employ enterprise-grade encryption and security protocols to protect your sensitive information from unauthorized access, alteration, or disclosure.</p>
+
+    <h2>5. Your Rights</h2>
+    <p>Under NDPR and international conventions, you have the right to request access to, correction of, or deletion of your personal data held by Harkein Synergies.</p>
+
+    <h2>6. Contact Us</h2>
+    <p>For privacy inquiries, please contact our Compliance Officer at: <a href="mailto:infoharkein@gmail.com">infoharkein@gmail.com</a></p>
+  </div>
+
+  <footer>
+    <p>&copy; 2025 Harkein Synergies. All Rights Reserved.</p>
+  </footer>
+
+</body>
+</html>
