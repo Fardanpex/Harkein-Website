@@ -7,18 +7,11 @@
   <link rel="icon" href="https://i.ibb.co/RpKv1djv/file-0000000043cc620a9e2842b1759c4eac-conversation-id-681fc7fd-2814-800f-981e-7caabb6ca2dd-message-i.png" type="image/png">
   <style>
     /* SHARED CORPORATE THEME */
-    :root{
-      --navy: #0f172a;       
-      --gold: #d4af37;       
-      --gold-light: #f3e5ab; 
-      --grey: #f8fafc;       
-      --text: #334155;       
-      --white: #ffffff;
-    }
+    :root{ --navy: #0f172a; --gold: #d4af37; --gold-light: #f3e5ab; --grey: #f8fafc; --text: #334155; --white: #ffffff; }
     *{box-sizing:border-box}
     body{font-family: 'Helvetica Neue', 'Segoe UI', Arial, sans-serif; margin:0; background:var(--white); color:var(--text); line-height: 1.6;}
     
-    /* HEADER (Consistent) */
+    /* HEADER */
     header{background: rgba(15, 23, 42, 0.98); backdrop-filter: blur(10px); color:white; position:sticky; top:0; z-index:1000; border-bottom: 3px solid var(--gold);}
     .container{max-width:1200px; margin:0 auto; padding:0 20px;}
     .topbar{display:flex; align-items:center; justify-content:space-between; padding:15px 0;}
@@ -31,65 +24,33 @@
     .nav-btn { border: 1px solid var(--gold); padding: 8px 16px; border-radius: 4px; color: var(--gold) !important; }
     .nav-btn:hover { background: var(--gold); color: var(--navy) !important; }
 
-    /* PROPERTY HERO */
-    .page-hero {
-        height: 60vh;
-        background-image: url('https://images.unsplash.com/photo-1600596542815-e32870110274?auto=format&fit=crop&w=1600&q=80');
-        background-size: cover;
-        background-position: center;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        position: relative;
-    }
+    /* HERO */
+    .page-hero { height: 60vh; background-image: url('https://images.unsplash.com/photo-1600596542815-e32870110274?auto=format&fit=crop&w=1600&q=80'); background-size: cover; background-position: center; display: flex; align-items: center; justify-content: center; position: relative; }
     .page-hero::after { content:''; position:absolute; inset:0; background: linear-gradient(0deg, var(--navy), transparent); opacity: 0.8; }
     .hero-text { position: relative; z-index: 2; text-align: center; color: white; }
     .hero-text h1 { font-size: 48px; margin: 0; font-weight: 800; letter-spacing: 2px; }
     .hero-text p { font-size: 18px; color: var(--gold); text-transform: uppercase; letter-spacing: 1px; margin-top: 10px; }
 
-    /* SERVICES BAR */
+    /* SERVICES */
     .services-bar { background: var(--navy); color: white; padding: 40px 0; text-align: center; }
     .services-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 20px; }
     .service-item h3 { color: var(--gold); margin-bottom: 10px; }
     .service-item p { font-size: 14px; opacity: 0.8; }
 
-    /* LISTINGS GRID */
+    /* GRID */
     section { padding: 80px 0; }
     .grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(320px, 1fr)); gap: 30px; }
-    
-    .prop-card {
-        background: white;
-        border: 1px solid #e2e8f0;
-        transition: 0.3s;
-        border-radius: 8px;
-        overflow: hidden;
-        position: relative;
-    }
+    .prop-card { background: white; border: 1px solid #e2e8f0; transition: 0.3s; border-radius: 8px; overflow: hidden; position: relative; }
     .prop-card:hover { box-shadow: 0 15px 30px rgba(0,0,0,0.1); transform: translateY(-5px); }
-    
     .prop-img-wrap { position: relative; height: 250px; }
     .prop-img { width: 100%; height: 100%; object-fit: cover; }
     .prop-status { position: absolute; top: 15px; left: 15px; background: var(--gold); color: var(--navy); padding: 5px 12px; font-weight: 700; font-size: 12px; border-radius: 4px; text-transform: uppercase; }
-    
     .prop-details { padding: 25px; }
     .prop-loc { color: #64748b; font-size: 13px; font-weight: 600; text-transform: uppercase; letter-spacing: 1px; display: flex; align-items: center; gap: 5px; }
     .prop-title { color: var(--navy); font-size: 20px; margin: 10px 0; font-weight: 700; }
     .prop-price { color: var(--text); font-weight: 600; font-size: 18px; margin-bottom: 15px; }
     .prop-meta { display: flex; gap: 15px; font-size: 14px; color: #64748b; border-top: 1px solid #e2e8f0; padding-top: 15px; margin-top: 15px; }
-    
-    .btn-inquire {
-        display: block;
-        width: 100%;
-        text-align: center;
-        padding: 12px;
-        background: var(--navy);
-        color: white;
-        text-decoration: none;
-        font-weight: 700;
-        margin-top: 20px;
-        border-radius: 4px;
-        transition: 0.3s;
-    }
+    .btn-inquire { display: block; width: 100%; text-align: center; padding: 12px; background: var(--navy); color: white; text-decoration: none; font-weight: 700; margin-top: 20px; border-radius: 4px; transition: 0.3s; }
     .btn-inquire:hover { background: var(--gold); color: var(--navy); }
 
     /* FOOTER */
@@ -100,15 +61,8 @@
     .footer-col ul li { margin-bottom: 10px; }
     .footer-col a { color: rgba(255,255,255,0.6); text-decoration: none; transition: 0.3s; }
     .footer-col a:hover { color: var(--gold); }
-
-    /* RESPONSIVE */
-    @media(max-width:768px){ 
-        .topbar { flex-direction: column; gap: 15px; }
-        nav { display: flex; flex-wrap: wrap; justify-content: center; gap: 15px; }
-        nav a { margin: 0; }
-        .page-hero h1 { font-size: 32px; }
-        .services-grid { grid-template-columns: 1fr; }
-    }
+    
+    @media(max-width:768px){ .topbar { flex-direction: column; gap: 15px; } nav { display: flex; flex-wrap: wrap; justify-content: center; gap: 15px; } nav a { margin: 0; } .services-grid { grid-template-columns: 1fr; } }
   </style>
 </head>
 <body>
@@ -119,7 +73,7 @@
       <nav>
         <a href="index.html">Home</a>
         <a href="index.html#divisions">Our Businesses</a>
-        <a href="https://instagram.com/harkein_ein" target="_blank" class="nav-social">INSTAGRAM</a>
+        <a href="https://instagram.com/harkein_synergies" target="_blank" class="nav-social">INSTAGRAM</a>
         <a href="index.html#contact" class="nav-btn">Contact Us</a>
       </nav>
     </div>
@@ -157,6 +111,7 @@
         </div>
 
         <div class="grid">
+            
             <div class="prop-card">
                 <div class="prop-img-wrap">
                     <span class="prop-status">For Sale</span>
@@ -193,27 +148,8 @@
                 </div>
             </div>
 
-            <div class="prop-card">
-                <div class="prop-img-wrap">
-                    <span class="prop-status">For Sale</span>
-                    <img src="https://images.unsplash.com/photo-1564013799919-ab600027ffc6?auto=format&fit=crop&w=800&q=80" alt="Mansion" class="prop-img">
-                </div>
-                <div class="prop-details">
-                    <div class="prop-loc">📍 Abuja, FCT</div>
-                    <div class="prop-title">Luxury Contemporary Villa</div>
-                    <div class="prop-price">₦350,000,000</div>
-                    <div class="prop-meta">
-                        <span>🛏 7 Beds</span>
-                        <span>🏊 Pool</span>
-                        <span>🎥 Cinema</span>
-                    </div>
-                    <a href="https://wa.me/2347065917831?text=I%20am%20interested%20in%20the%20Abuja%20Villa" class="btn-inquire">Request Tour</a>
-                </div>
-            </div>
-
         </div>
     </section>
-
   </main>
 
   <footer>
@@ -232,8 +168,8 @@
         </div>
         <div class="footer-col">
             <h4>Connect</h4>
-            <p>Instagram: <a href="https://instagram.com/harkein_ein" target="_blank" style="color:var(--gold)">@harkein_ein</a></p>
-            <p>Email: <a href="mailto:folaranmihussein@gmail.com">folaranmihussein@gmail.com</a></p>
+            <p>Instagram: <a href="https://instagram.com/harkein_synergies" target="_blank" style="color:var(--gold)">@harkein_synergies</a></p>
+            <p>Email: <a href="mailto:infoharkein@gmail.com">infoharkein@gmail.com</a></p>
         </div>
         <div class="footer-col">
             <h4>Legal</h4>
@@ -241,6 +177,5 @@
         </div>
     </div>
   </footer>
-
 </body>
 </html>
