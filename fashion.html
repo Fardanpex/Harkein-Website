@@ -3,95 +3,209 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width,initial-scale=1">
-  <title>HARKEIN Fashion</title>
+  <title>HARKEIN FASHION — Luxury & Bespoke</title>
   <link rel="icon" href="https://i.ibb.co/RpKv1djv/file-0000000043cc620a9e2842b1759c4eac-conversation-id-681fc7fd-2814-800f-981e-7caabb6ca2dd-message-i.png" type="image/png">
   <style>
-    body {font-family:'Helvetica Neue',Arial,sans-serif; margin:0; background:#FAFAFA; color:#1A1A1A;}
-    header {background:#0A1D37; color:white; padding:14px 0; text-align:center;}
-    .logo img {height:60px;}
-    .back {display:inline-block; color:#F5E6C5; text-decoration:none; margin-top:10px;}
-    h1 {margin:10px 0;}
-    .grid {display:grid; grid-template-columns:repeat(auto-fit,minmax(300px,1fr)); gap:18px; max-width:1200px; margin:40px auto; padding:0 20px;}
-    .card {background:white; border-radius:10px; box-shadow:0 6px 18px rgba(10,29,55,0.06); overflow:hidden;}
-    .card img {width:100%; height:220px; object-fit:cover;}
-    .card-body {padding:16px;}
-    .price {font-weight:800; color:#0A1D37;}
-    .status {background:#F5E6C5; color:#0A1D37; font-weight:700; border-radius:999px; padding:4px 10px; margin-left:8px;}
-    .actions a {color:#E63946; text-decoration:none; font-weight:700; margin-right:12px;}
+    /* SHARED CORPORATE THEME */
+    :root{
+      --navy: #0f172a;       
+      --gold: #d4af37;       
+      --gold-light: #f3e5ab; 
+      --grey: #f8fafc;       
+      --text: #334155;       
+      --white: #ffffff;
+    }
+    *{box-sizing:border-box}
+    body{font-family: 'Helvetica Neue', 'Segoe UI', Arial, sans-serif; margin:0; background:var(--white); color:var(--text); line-height: 1.6;}
+    
+    /* HEADER */
+    header{background: rgba(15, 23, 42, 0.98); backdrop-filter: blur(10px); color:white; position:sticky; top:0; z-index:1000; border-bottom: 3px solid var(--gold);}
+    .container{max-width:1200px; margin:0 auto; padding:0 20px;}
+    .topbar{display:flex; align-items:center; justify-content:space-between; padding:15px 0;}
+    .logo-text { font-size: 24px; font-weight: 800; color: white; text-transform: uppercase; letter-spacing: 1px; text-decoration: none;}
+    .logo-text span { color: var(--gold); }
+    nav a{color:white; text-decoration:none; margin-left:25px; font-weight:500; font-size: 14px; text-transform: uppercase; letter-spacing: 0.5px; transition: 0.3s;}
+    nav a:hover { color: var(--gold); }
+    
+    /* Social Link in Nav */
+    .nav-social { color: var(--gold) !important; font-weight: 700; border-bottom: 1px solid transparent; }
+    .nav-social:hover { border-bottom: 1px solid var(--gold); }
+
+    .nav-btn { border: 1px solid var(--gold); padding: 8px 16px; border-radius: 4px; color: var(--gold) !important; }
+    .nav-btn:hover { background: var(--gold); color: var(--navy) !important; }
+
+    /* FASHION HERO */
+    .page-hero {
+        height: 60vh;
+        background-image: url('https://images.unsplash.com/photo-1490481651871-61109968a3fb?auto=format&fit=crop&w=1600&q=80');
+        background-size: cover;
+        background-position: center;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        position: relative;
+    }
+    .page-hero::after { content:''; position:absolute; inset:0; background: rgba(15,23,42,0.5); }
+    .hero-text { position: relative; z-index: 2; text-align: center; color: white; }
+    .hero-text h1 { font-size: 48px; margin: 0; font-weight: 800; letter-spacing: 2px; }
+    .hero-text p { font-size: 18px; color: var(--gold); text-transform: uppercase; letter-spacing: 1px; margin-top: 10px; }
+    .hero-btn { display: inline-block; margin-top: 20px; padding: 10px 25px; background: var(--gold); color: var(--navy); text-decoration: none; font-weight: 700; border-radius: 4px; }
+
+    /* PRODUCT GRID */
+    section { padding: 80px 0; }
+    .grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 30px; }
+    
+    .product-card {
+        background: white;
+        border: 1px solid #e2e8f0;
+        transition: 0.3s;
+        border-radius: 8px;
+        overflow: hidden;
+    }
+    .product-card:hover {
+        box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+        transform: translateY(-5px);
+    }
+    .product-img {
+        height: 350px;
+        width: 100%;
+        object-fit: cover;
+    }
+    .product-details { padding: 20px; text-align: center; }
+    .product-cat { color: var(--gold); font-size: 12px; font-weight: 700; text-transform: uppercase; letter-spacing: 1px; }
+    .product-title { color: var(--navy); font-size: 18px; margin: 5px 0 10px; font-weight: 600; }
+    .product-price { color: var(--text); font-weight: 400; margin-bottom: 15px; }
+    .btn-buy {
+        display: inline-block;
+        padding: 10px 20px;
+        background: var(--navy);
+        color: white;
+        text-decoration: none;
+        font-size: 13px;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+        transition: 0.3s;
+        border-radius: 4px;
+    }
+    .btn-buy:hover { background: var(--gold); color: var(--navy); }
+
+    /* FOOTER */
+    footer{background:#0b1120; color:rgba(255,255,255,0.6); padding:60px 0; font-size: 14px; margin-top: 50px;}
+    .footer-content { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 40px; }
+    .footer-col h4 { color: white; margin-bottom: 20px; text-transform: uppercase; letter-spacing: 1px; }
+    .footer-col ul { list-style: none; padding: 0; }
+    .footer-col ul li { margin-bottom: 10px; }
+    .footer-col a { color: rgba(255,255,255,0.6); text-decoration: none; transition: 0.3s; }
+    .footer-col a:hover { color: var(--gold); }
+
+    /* RESPONSIVE */
+    @media(max-width:768px){ 
+        .topbar { flex-direction: column; gap: 15px; }
+        nav { display: flex; flex-wrap: wrap; justify-content: center; gap: 15px; }
+        nav a { margin: 0; }
+        .page-hero h1 { font-size: 32px; }
+    }
   </style>
 </head>
 <body>
+
   <header>
-    <div class="logo">
-      <img src="https://i.ibb.co/RpKv1djv/file-0000000043cc620a9e2842b1759c4eac-conversation-id-681fc7fd-2814-800f-981e-7caabb6ca2dd-message-i.png" alt="HARKEIN Logo">
+    <div class="container topbar">
+      <a href="index.html" class="logo-text">HARKEIN <span>SYNERGIES</span></a>
+      <nav>
+        <a href="index.html">Home</a>
+        <a href="index.html#divisions">Our Businesses</a>
+        <a href="https://instagram.com/harkein_ein" target="_blank" class="nav-social">INSTAGRAM</a>
+        <a href="index.html#contact" class="nav-btn">Contact Us</a>
+      </nav>
     </div>
-    <h1>Fashion Collection</h1>
-    <a href="index.html" class="back">← Back to Home</a>
   </header>
 
-  <section class="grid" id="fashionGrid">
-    <div class="card">
-      <img src="https://images.unsplash.com/photo-1541099649105-f69ad21f3246?auto=format&fit=crop&w=800&q=80" alt="Designer Tuxedo">
-      <div class="card-body">
-        <h3>Designer Tuxedo</h3>
-        <div><span class="price">${item.price}</span></div>
-        <p>Premium navy tuxedo, custom fit.</p>
-        <div class="actions"><a href="mailto:folaranmihussein@gmail.com">📧 Email</a><a href="https://instagram.com/harkein_ein" target="_blank">📸 Instagram</a></div>
-      </div>
-    </div>
-
-    <div class="card">
-      <img src="https://images.unsplash.com/photo-1503342452485-86f7e8ff8fbe?auto=format&fit=crop&w=800&q=80" alt="Evening Gown">
-      <div class="card-body">
-        <h3>Evening Gown</h3>
-        <div><span class="price">$620</span><span class="status">In Stock</span></div>
-        <p>Red silk evening gown, sizes S-XL.</p>
-        <div class="actions"><a href="mailto:folaranmihussein@gmail.com">📧 Email</a><a href="https://instagram.com/harkein_ein" target="_blank">📸 Instagram</a></div>
-      </div>
-    </div>
-
-    <div class="card">
-      <img src="https://images.unsplash.com/photo-1520975918724-9f3f73f7b0f7?auto=format&fit=crop&w=800&q=80" alt="Streetwear Set">
-      <div class="card-body">
-        <h3>Streetwear Set</h3>
-        <div><span class="price">$220</span><span class="status">In Stock</span></div>
-        <p>Limited edition streetwear set.</p>
-        <div class="actions"><a href="mailto:folaranmihussein@gmail.com">📧 Email</a><a href="https://instagram.com/harkein_ein" target="_blank">📸 Instagram</a></div>
-      </div>
-    </div>
-
-    <div class="card">
-      <img src="https://images.unsplash.com/photo-1520975918724-9f3f73f7b0f7?auto=format&fit=crop&w=800&q=80" alt="Luxury Handbag">
-      <div class="card-body">
-        <h3>Luxury Handbag</h3>
-        <div><span class="price">$1,200</span><span class="status">In Stock</span></div>
-        <p>Handmade leather handbag.</p>
-        <div class="actions"><a href="mailto:folaranmihussein@gmail.com">📧 Email</a><a href="https://instagram.com/harkein_ein" target="_blank">📸 Instagram</a></div>
-      </div>
-    </div>
-  </section>
-
-  <!-- 🟢 Dynamic data script starts -->
-  <script src="js/data.js"></script>
-<script>
-  if (typeof fashionData !== 'undefined' && fashionData.length > 0) {
-    const grid = document.getElementById('fashionGrid');
-    grid.innerHTML = fashionData.map(item => `
-      <div class="card">
-        <img src="${item.image}" alt="${item.title}">
-        <div class="card-body">
-          <h3>${item.title}</h3>
-          <div><span class="price">${item.price}</span><span class="status">In Stock</span></div>
-          <p>${item.description}</p>
-          <div class="actions">
-            <a href="mailto:${item.email}">📧 Email</a>
-            <a href="${item.instagram}" target="_blank">📸 Instagram</a>
-          </div>
+  <main>
+    <div class="page-hero">
+        <div class="hero-text">
+            <h1>HARKEIN FASHION</h1>
+            <p>Timeless Elegance. Modern Design.</p>
+            <a href="https://instagram.com/harkein_ein" target="_blank" class="hero-btn">Follow our Collection</a>
         </div>
-      </div>
-    `).join('');
-  }
-</script>
-  <!-- 🟢 Dynamic data script ends -->
+    </div>
+
+    <section class="container">
+        <div style="text-align: center; margin-bottom: 50px;">
+            <h2 style="color: var(--navy); font-size: 32px;">The Collection</h2>
+            <div style="width: 50px; height: 3px; background: var(--gold); margin: 10px auto;"></div>
+        </div>
+
+        <div class="grid">
+            <div class="product-card">
+                <img src="https://images.unsplash.com/photo-1594938298603-c8148c4dae35?auto=format&fit=crop&w=800&q=80" alt="Silk Dress" class="product-img">
+                <div class="product-details">
+                    <div class="product-cat">Women's Luxury</div>
+                    <div class="product-title">Evening Silk Gown</div>
+                    <div class="product-price">₦45,000</div>
+                    <a href="https://wa.me/2347065917831?text=I%20am%20interested%20in%20the%20Evening%20Silk%20Gown" class="btn-buy">Order via WhatsApp</a>
+                </div>
+            </div>
+
+            <div class="product-card">
+                <img src="https://images.unsplash.com/photo-1507679799987-c73779587ccf?auto=format&fit=crop&w=800&q=80" alt="Bespoke Suit" class="product-img">
+                <div class="product-details">
+                    <div class="product-cat">Men's Tailoring</div>
+                    <div class="product-title">Bespoke Navy Suit</div>
+                    <div class="product-price">₦120,000</div>
+                    <a href="https://wa.me/2347065917831?text=I%20am%20interested%20in%20the%20Bespoke%20Navy%20Suit" class="btn-buy">Book Consultation</a>
+                </div>
+            </div>
+
+            <div class="product-card">
+                <img src="https://images.unsplash.com/photo-1584917865442-de89df76afd3?auto=format&fit=crop&w=800&q=80" alt="Leather Bag" class="product-img">
+                <div class="product-details">
+                    <div class="product-cat">Accessories</div>
+                    <div class="product-title">Handcrafted Leather Bag</div>
+                    <div class="product-price">₦35,000</div>
+                    <a href="https://wa.me/2347065917831?text=I%20am%20interested%20in%20the%20Leather%20Bag" class="btn-buy">Order via WhatsApp</a>
+                </div>
+            </div>
+
+            <div class="product-card">
+                <img src="https://images.unsplash.com/photo-1591561954557-26941169b49e?auto=format&fit=crop&w=800&q=80" alt="Classic Watch" class="product-img">
+                <div class="product-details">
+                    <div class="product-cat">Accessories</div>
+                    <div class="product-title">Classic Gold Timepiece</div>
+                    <div class="product-price">₦85,000</div>
+                    <a href="https://wa.me/2347065917831?text=I%20am%20interested%20in%20the%20Gold%20Timepiece" class="btn-buy">Order via WhatsApp</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+  </main>
+
+  <footer>
+    <div class="container footer-content">
+        <div class="footer-col">
+            <h4>Harkein Synergies</h4>
+            <p>A multi-sector conglomerate dedicated to excellence in Logistics, Real Estate, and Fashion.</p>
+        </div>
+        <div class="footer-col">
+            <h4>Our Sectors</h4>
+            <ul>
+                <li><a href="index.html#logistics">Global Logistics</a></li>
+                <li><a href="properties.html">Real Estate</a></li>
+                <li><a href="fashion.html">Fashion & Retail</a></li>
+            </ul>
+        </div>
+        <div class="footer-col">
+            <h4>Connect</h4>
+            <p>Instagram: <a href="https://instagram.com/harkein_ein" target="_blank" style="color:var(--gold)">@harkein_ein</a></p>
+            <p>Email: <a href="mailto:folaranmihussein@gmail.com">folaranmihussein@gmail.com</a></p>
+        </div>
+        <div class="footer-col">
+            <h4>Legal</h4>
+            <p>&copy; 2025 Harkein Synergies.</p>
+        </div>
+    </div>
+  </footer>
+
 </body>
 </html>
