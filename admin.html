@@ -1,230 +1,268 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Harkein Admin Dashboard</title>
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
-
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>CEO Dashboard — Harkein Synergies</title>
+  <link rel="icon" href="https://i.ibb.co/RpKv1djv/file-0000000043cc620a9e2842b1759c4eac-conversation-id-681fc7fd-2814-800f-981e-7caabb6ca2dd-message-i.png" type="image/png">
   <style>
-    body {
-      font-family: 'Poppins', sans-serif;
-      margin: 0;
-      background: #e0f2fe;
-      display: flex;
-      justify-content: center;
-      padding: 30px 10px;
-    }
+    /* ADMIN THEME */
+    :root{ --navy: #0f172a; --gold: #d4af37; --white: #ffffff; --grey: #f1f5f9; }
+    *{box-sizing:border-box}
+    body{font-family: 'Segoe UI', sans-serif; margin:0; background:var(--navy); color:var(--text); height: 100vh; overflow: hidden;}
 
-    .hero {
-      text-align: center;
-      background: linear-gradient(90deg, #1e3a8a, #3b82f6);
-      color: white;
-      padding: 30px 20px;
-      border-radius: 15px;
-      box-shadow: 0 5px 20px rgba(0,0,0,0.1);
-      margin-bottom: 25px;
-      max-width: 500px;
-      width: 100%;
-    }
+    /* LOGIN SCREEN */
+    #login-screen { position: fixed; inset: 0; background: var(--navy); z-index: 2000; display: flex; align-items: center; justify-content: center; flex-direction: column; }
+    .login-box { background: white; padding: 40px; border-radius: 8px; text-align: center; width: 350px; border-top: 5px solid var(--gold); }
+    .login-box h2 { margin-top: 0; color: var(--navy); }
+    .login-box input { width: 100%; padding: 12px; margin: 15px 0; border: 1px solid #ccc; border-radius: 4px; font-size: 16px; text-align: center;}
+    .login-btn { width: 100%; padding: 12px; background: var(--navy); color: white; border: none; font-weight: bold; cursor: pointer; transition: 0.3s; }
+    .login-btn:hover { background: var(--gold); color: var(--navy); }
 
-    .container {
-      background: linear-gradient(to bottom, #ffffff, #f0f4f8);
-      padding: 35px 40px;
-      border-radius: 15px;
-      box-shadow: 0 15px 30px rgba(0,0,0,0.2);
-      max-width: 500px;
-      width: 100%;
-    }
+    /* DASHBOARD LAYOUT */
+    #dashboard { display: none; height: 100vh; display: flex; } 
+    
+    /* SIDEBAR */
+    .sidebar { width: 250px; background: rgba(0,0,0,0.2); border-right: 1px solid rgba(255,255,255,0.1); display: flex; flex-direction: column; padding: 20px; }
+    .brand { color: white; font-size: 20px; font-weight: 800; margin-bottom: 40px; text-transform: uppercase; letter-spacing: 1px; }
+    .brand span { color: var(--gold); }
+    .nav-item { padding: 15px; color: rgba(255,255,255,0.7); cursor: pointer; border-radius: 4px; margin-bottom: 5px; transition: 0.2s; }
+    .nav-item:hover, .nav-item.active { background: var(--gold); color: var(--navy); font-weight: 700; }
+    
+    /* MAIN CONTENT */
+    .main-content { flex: 1; background: var(--grey); padding: 40px; overflow-y: auto; }
+    .panel { display: none; animation: fadeIn 0.3s; }
+    .panel.active { display: block; }
+    
+    h2 { color: var(--navy); border-bottom: 2px solid var(--gold); padding-bottom: 10px; display: inline-block; }
+    
+    /* FORMS */
+    .form-group { background: white; padding: 25px; border-radius: 8px; box-shadow: 0 4px 12px rgba(0,0,0,0.05); max-width: 800px; }
+    label { display: block; margin-bottom: 8px; font-weight: 600; color: #333; }
+    input, select, textarea { width: 100%; padding: 10px; border: 1px solid #ddd; border-radius: 4px; margin-bottom: 20px; }
+    .btn-generate { background: var(--navy); color: white; border: none; padding: 12px 24px; font-weight: bold; cursor: pointer; border-radius: 4px; }
+    .btn-generate:hover { background: var(--gold); color: var(--navy); }
 
-    h2 { text-align: center; color: #1e3a8a; margin-bottom: 25px; }
+    /* OUTPUT BOX */
+    .output-area { margin-top: 30px; background: #1e293b; padding: 20px; border-radius: 8px; color: #a5b4fc; font-family: monospace; position: relative; }
+    textarea.code-box { width: 100%; height: 200px; background: transparent; border: none; color: inherit; resize: none; outline: none; }
+    .copy-btn { position: absolute; top: 10px; right: 10px; background: var(--gold); color: var(--navy); border: none; padding: 5px 10px; font-size: 12px; font-weight: bold; cursor: pointer; border-radius: 4px; }
 
-    input, select, textarea {
-      width: 100%;
-      padding: 10px 12px;
-      border-radius: 8px;
-      border: 1px solid #ccc;
-      margin-bottom: 10px;
-      box-sizing: border-box;
-    }
-
-    button {
-      background: linear-gradient(90deg, #1e3a8a, #3b82f6);
-      color: white;
-      font-weight: 600;
-      border: none;
-      padding: 12px;
-      border-radius: 12px;
-      width: 100%;
-      cursor: pointer;
-      margin-top: 10px;
-    }
-
-    #imagePreview {
-      display: none;
-      max-width: 100%;
-      border-radius: 12px;
-      margin-top: 15px;
-    }
-
-    #confirmModal {
-      display: none;
-      position: fixed;
-      top: 0; left: 0;
-      width: 100%; height: 100%;
-      background: rgba(0,0,0,0.7);
-      justify-content: center;
-      align-items: center;
-    }
+    @keyframes fadeIn { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: translateY(0); } }
   </style>
 </head>
-
 <body>
 
-  <div class="hero">
-    <h1>Harkein Admin Dashboard</h1>
-    <p>Manage Properties & Fashion Listings</p>
+  <div id="login-screen">
+    <div class="login-box">
+      <h2>CEO ACCESS</h2>
+      <p>Enter Access PIN</p>
+      <input type="password" id="password" placeholder="****">
+      <button class="login-btn" onclick="checkLogin()">UNLOCK DASHBOARD</button>
+      <p id="error-msg" style="color: red; display: none; margin-top: 10px; font-size: 14px;">Access Denied</p>
+    </div>
   </div>
 
-  <div class="container">
-    <h2>Add New Listing</h2>
+  <div id="main-interface" style="display: none; height: 100vh; width: 100%;">
+    
+    <div class="sidebar">
+      <div class="brand">HARKEIN <span>ADMIN</span></div>
+      <div class="nav-item active" onclick="switchTab('fashion')">Fashion Store</div>
+      <div class="nav-item" onclick="switchTab('realestate')">Real Estate</div>
+      <div class="nav-item" onclick="logout()">Logout</div>
+    </div>
 
-    <form id="uploadForm">
-      <label>Category:</label>
-      <select id="category">
-        <option value="properties">Property</option>
-        <option value="fashion">Fashion</option>
-      </select>
+    <div class="main-content">
+      
+      <div id="fashion" class="panel active">
+        <h2>Add Fashion Item</h2>
+        <p>Generates code with WhatsApp & Instagram buttons.</p>
+        
+        <div class="form-group">
+          <label>Image Link (URL)</label>
+          <input type="text" id="f-img" placeholder="https://...">
+          
+          <label>Category</label>
+          <select id="f-cat">
+            <option>Men's Luxury</option>
+            <option>Women's Luxury</option>
+            <option>Accessories</option>
+            <option>Streetwear</option>
+          </select>
+          
+          <label>Product Name</label>
+          <input type="text" id="f-name" placeholder="e.g. Navy Blue Bespoke Suit">
+          
+          <label>Price (₦)</label>
+          <input type="text" id="f-price" placeholder="e.g. 150,000">
 
-      <label>Title:</label>
-      <input type="text" id="title" required>
+          <button class="btn-generate" onclick="generateFashion()">Generate Code</button>
+        </div>
 
-      <label>Price:</label>
-      <input type="text" id="price" required>
+        <div class="output-area" id="f-output" style="display:none;">
+          <button class="copy-btn" onclick="copyCode('f-code')">COPY CODE</button>
+          <p style="color: white; margin-top: 0;"><strong>Instructions:</strong> Paste inside the <code>&lt;div class="grid"&gt;</code> in <b>fashion.html</b>.</p>
+          <textarea id="f-code" class="code-box"></textarea>
+        </div>
+      </div>
 
-      <label>Location (properties only):</label>
-      <input type="text" id="location">
+      <div id="realestate" class="panel">
+        <h2>Add Property</h2>
+        <p>Generates property card with location, features, and social buttons.</p>
+        
+        <div class="form-group">
+          <label>Image Link (URL)</label>
+          <input type="text" id="p-img" placeholder="https://...">
+          
+          <label>Status</label>
+          <select id="p-status">
+            <option>For Sale</option>
+            <option>For Rent</option>
+            <option>Sold</option>
+          </select>
+          
+          <label>Location</label>
+          <input type="text" id="p-loc" placeholder="e.g. Lekki Phase 1, Lagos">
+          
+          <label>Property Title</label>
+          <input type="text" id="p-title" placeholder="e.g. 4 Bedroom Terrace">
+          
+          <label>Price</label>
+          <input type="text" id="p-price" placeholder="e.g. ₦120,000,000">
+          
+          <div style="display: flex; gap: 10px;">
+            <div style="flex:1">
+                <label>Beds</label>
+                <input type="text" id="p-beds" placeholder="4 Beds">
+            </div>
+            <div style="flex:1">
+                <label>Baths/Feature</label>
+                <input type="text" id="p-baths" placeholder="5 Baths">
+            </div>
+          </div>
 
-      <label>Description:</label>
-      <textarea id="description" required></textarea>
+          <button class="btn-generate" onclick="generateProperty()">Generate Code</button>
+        </div>
 
-      <label>Image File:</label>
-      <input type="file" id="imageFile" accept="image/*" required>
+        <div class="output-area" id="p-output" style="display:none;">
+          <button class="copy-btn" onclick="copyCode('p-code')">COPY CODE</button>
+          <p style="color: white; margin-top: 0;"><strong>Instructions:</strong> Paste inside the <code>&lt;div class="grid"&gt;</code> in <b>properties.html</b>.</p>
+          <textarea id="p-code" class="code-box"></textarea>
+        </div>
+      </div>
 
-      <img id="imagePreview">
-
-      <button type="submit">Add Listing</button>
-    </form>
-
-    <p id="status"></p>
+    </div>
   </div>
 
-  <!-- Confirmation Modal -->
-  <div id="confirmModal">
-    <div class="modal-content"></div>
-  </div>
+  <script>
+    // ============================================
+    // CEO CONFIGURATION (EDIT HERE)
+    // ============================================
+    
+    // 1. YOUR PASSWORD
+    const PASSWORD = "1234"; 
 
-  <!-- FIREBASE + CLOUDINARY -->
-  <script type="module">
-    import { initializeApp } from "https://www.gstatic.com/firebasejs/11.0.1/firebase-app.js";
-    import { getFirestore, collection, addDoc, serverTimestamp } from "https://www.gstatic.com/firebasejs/11.0.1/firebase-firestore.js";
+    // 2. YOUR WHATSAPP NUMBER (Start with 234, no +)
+    const WA_PHONE = "2347065917831"; 
 
-    // Firebase Config
-    const firebaseConfig = {
-      apiKey: "AIzaSyBTLtME_8Vik5W2SAagPibPpaduBmzpjF8",
-      authDomain: "harkein-site.firebaseapp.com",
-      projectId: "harkein-site",
-      storageBucket: "harkein-site.appspot.com",
-      messagingSenderId: "560414142424",
-      appId: "1:560414142424:web:d45c1c30446e839b314cad",
-      measurementId: "G-JYH1MRCDBR"
-    };
+    // 3. YOUR INSTAGRAM USERNAME
+    const IG_USER = "harkein_ein";
 
-    const app = initializeApp(firebaseConfig);
-    const db = getFirestore(app);
+    // ============================================
+    // SYSTEM CODE (DO NOT EDIT BELOW)
+    // ============================================
 
-    const uploadForm = document.getElementById("uploadForm");
-    const imageFile = document.getElementById("imageFile");
-    const imagePreview = document.getElementById("imagePreview");
-    const status = document.getElementById("status");
-
-    let fileToUpload = null;
-
-    // ✔️ Live preview
-    imageFile.addEventListener("change", e => {
-      const file = e.target.files[0];
-      fileToUpload = file;
-
-      const reader = new FileReader();
-      reader.onload = ev => {
-        imagePreview.src = ev.target.result;
-        imagePreview.style.display = "block";
-      };
-      reader.readAsDataURL(file);
-    });
-
-    // ✔️ CLOUDINARY UPLOAD FUNCTION
-    async function uploadImageToCloudinary(file) {
-      const url = `https://api.cloudinary.com/v1_1/drylhvnma/image/upload`;
-
-      const formData = new FormData();
-      formData.append("file", file);
-      formData.append("upload_preset", "Harkein_site");
-
-      const response = await fetch(url, {
-        method: "POST",
-        body: formData
-      });
-
-      const data = await response.json();
-      return data.secure_url; // final image URL
+    function checkLogin() {
+        const input = document.getElementById("password").value;
+        if(input === PASSWORD) {
+            document.getElementById("login-screen").style.display = "none";
+            document.getElementById("main-interface").style.display = "flex";
+        } else {
+            document.getElementById("error-msg").style.display = "block";
+        }
     }
 
-    // ✔️ Upload handler
-    uploadForm.addEventListener("submit", async e => {
-      e.preventDefault();
+    function switchTab(tabId) {
+        document.querySelectorAll('.panel').forEach(p => p.classList.remove('active'));
+        document.querySelectorAll('.nav-item').forEach(n => n.classList.remove('active'));
+        document.getElementById(tabId).classList.add('active');
+        event.target.classList.add('active');
+    }
 
-      if (!fileToUpload) {
-        alert("Select an image.");
-        return;
-      }
+    function generateFashion() {
+        const img = document.getElementById('f-img').value;
+        const cat = document.getElementById('f-cat').value;
+        const name = document.getElementById('f-name').value;
+        const price = document.getElementById('f-price').value;
+        
+        const waLink = `https://wa.me/${WA_PHONE}?text=I am interested in the ${name}`;
+        const igLink = `https://instagram.com/${IG_USER}`;
 
-      const category = document.getElementById("category").value;
-      const title = document.getElementById("title").value;
-      const price = document.getElementById("price").value;
-      const location = document.getElementById("location").value;
-      const description = document.getElementById("description").value;
+        const code = `
+            <div class="product-card">
+                <img src="${img}" alt="${name}" class="product-img">
+                <div class="product-details">
+                    <div class="product-cat">${cat}</div>
+                    <div class="product-title">${name}</div>
+                    <div class="product-price">₦${price}</div>
+                    <div style="display:flex; gap:10px; margin-top:15px;">
+                        <a href="${waLink}" class="btn-buy" style="flex:1; text-align:center; font-size:12px;">WhatsApp</a>
+                        <a href="${igLink}" target="_blank" class="btn-buy" style="flex:1; text-align:center; font-size:12px; background:#C13584;">Instagram</a>
+                    </div>
+                </div>
+            </div>`;
 
-      status.textContent = "Uploading image...";
-      status.style.color = "black";
+        document.getElementById('f-code').value = code.trim();
+        document.getElementById('f-output').style.display = "block";
+    }
 
-      try {
-        // 🔥 1. Upload to Cloudinary
-        const imageURL = await uploadImageToCloudinary(fileToUpload);
+    function generateProperty() {
+        const img = document.getElementById('p-img').value;
+        const status = document.getElementById('p-status').value;
+        const loc = document.getElementById('p-loc').value;
+        const title = document.getElementById('p-title').value;
+        const price = document.getElementById('p-price').value;
+        const beds = document.getElementById('p-beds').value;
+        const baths = document.getElementById('p-baths').value;
 
-        // 🔥 2. Save the details in Firestore
-        await addDoc(collection(db, category), {
-          title,
-          price,
-          location,
-          description,
-          image: imageURL,
-          createdAt: serverTimestamp()
-        });
+        const waLink = `https://wa.me/${WA_PHONE}?text=I am interested in the ${title} at ${loc}`;
+        const igLink = `https://instagram.com/${IG_USER}`;
 
-        status.textContent = "✅ Listing uploaded successfully!";
-        status.style.color = "green";
+        const code = `
+            <div class="prop-card">
+                <div class="prop-img-wrap">
+                    <span class="prop-status">${status}</span>
+                    <img src="${img}" alt="${title}" class="prop-img">
+                </div>
+                <div class="prop-details">
+                    <div class="prop-loc">📍 ${loc}</div>
+                    <div class="prop-title">${title}</div>
+                    <div class="prop-price">${price}</div>
+                    <div class="prop-meta">
+                        <span>${beds}</span>
+                        <span>${baths}</span>
+                    </div>
+                    <div style="display:flex; gap:10px; margin-top:15px;">
+                        <a href="${waLink}" class="btn-inquire" style="flex:1; font-size:12px;">WhatsApp</a>
+                        <a href="${igLink}" target="_blank" class="btn-inquire" style="flex:1; font-size:12px; background:#C13584;">Instagram</a>
+                    </div>
+                </div>
+            </div>`;
 
-        uploadForm.reset();
-        imagePreview.style.display = "none";
+        document.getElementById('p-code').value = code.trim();
+        document.getElementById('p-output').style.display = "block";
+    }
 
-      } catch (err) {
-        console.error(err);
-        status.textContent = "❌ Upload failed!";
-        status.style.color = "red";
-      }
-    });
+    function copyCode(elementId) {
+        const copyText = document.getElementById(elementId);
+        copyText.select();
+        document.execCommand("copy");
+        alert("Code copied! Now paste it into your HTML file on GitHub.");
+    }
+
+    function logout() {
+        location.reload();
+    }
   </script>
-
 </body>
 </html>
