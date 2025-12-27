@@ -1,0 +1,183 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Contact Us — Harkein Synergies</title>
+  <link rel="icon" href="https://i.ibb.co/RpKv1djv/file-0000000043cc620a9e2842b1759c4eac-conversation-id-681fc7fd-2814-800f-981e-7caabb6ca2dd-message-i.png" type="image/png">
+  <style>
+    /* CORPORATE THEME */
+    :root{ --navy: #0f172a; --gold: #d4af37; --grey: #f8fafc; --text: #334155; --white: #ffffff; }
+    *{box-sizing:border-box}
+    body{font-family: 'Helvetica Neue', 'Segoe UI', Arial, sans-serif; margin:0; background:var(--white); color:var(--text); line-height: 1.6;}
+
+    /* HEADER & LOGO FIX */
+    header{background: rgba(15, 23, 42, 0.98); backdrop-filter: blur(10px); color:white; position:sticky; top:0; z-index:1000; border-bottom: 3px solid var(--gold);}
+    .container{max-width:1200px; margin:0 auto; padding:0 20px;}
+    .topbar{display:flex; align-items:center; justify-content:space-between; padding:15px 0;}
+    
+    .logo-img img { 
+      height: 70px; /* FIXED: Increased size */
+      width: auto; 
+      border-radius: 4px; 
+      border: 2px solid var(--gold); 
+    }
+
+    nav a{color:white; text-decoration:none; margin-left:25px; font-weight:500; font-size: 14px; text-transform: uppercase; letter-spacing: 0.5px; transition: 0.3s;}
+    nav a:hover { color: var(--gold); }
+    .nav-btn { border: 1px solid var(--gold); padding: 8px 16px; border-radius: 4px; color: var(--gold) !important; }
+    .nav-btn:hover { background: var(--gold); color: var(--navy) !important; }
+
+    /* PAGE HERO */
+    .page-hero { height: 40vh; background-image: url('https://images.unsplash.com/photo-1423666639041-f56000c27a9a?auto=format&fit=crop&w=1600&q=80'); background-size: cover; background-position: center; display: flex; align-items: center; justify-content: center; position: relative; }
+    .page-hero::after { content:''; position:absolute; inset:0; background: rgba(15,23,42,0.85); }
+    .hero-text { position: relative; z-index: 2; text-align: center; color: white; max-width: 800px; padding: 20px; }
+    .hero-text h1 { font-size: 48px; margin: 0; font-weight: 800; letter-spacing: 1px; }
+
+    /* FORM SECTION */
+    .contact-wrapper { display: grid; grid-template-columns: 1fr 1fr; gap: 50px; margin-top: -50px; position: relative; z-index: 10; margin-bottom: 80px; }
+    
+    .contact-info-box { background: var(--navy); color: white; padding: 40px; border-radius: 8px; box-shadow: 0 20px 40px rgba(0,0,0,0.2); }
+    .contact-info-box h3 { color: var(--gold); margin-top: 0; }
+    .contact-info-box p { margin-bottom: 20px; opacity: 0.9; }
+    
+    .contact-form { background: white; padding: 40px; border-radius: 8px; box-shadow: 0 20px 40px rgba(0,0,0,0.1); border-top: 5px solid var(--gold); }
+    input, textarea, select { width: 100%; padding: 15px; border: 1px solid #e2e8f0; border-radius: 4px; margin-bottom: 15px; font-family: inherit; background: #f8fafc; }
+    button[type=submit] { background: var(--navy); color: white; border: none; padding: 15px 30px; border-radius: 4px; font-weight: 800; cursor: pointer; width: 100%; transition: 0.3s; }
+    button[type=submit]:hover { background: var(--gold); color: var(--navy); }
+
+    /* FOOTER */
+    footer{background:#0b1120; color:rgba(255,255,255,0.6); padding:60px 0; font-size: 14px;}
+    .footer-content { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 40px; }
+    .footer-col h4 { color: white; margin-bottom: 20px; text-transform: uppercase; letter-spacing: 1px; }
+    .footer-col ul { list-style: none; padding: 0; }
+    .footer-col ul li { margin-bottom: 10px; }
+    .footer-col a { color: rgba(255,255,255,0.6); text-decoration: none; transition: 0.3s; }
+    .footer-col a:hover { color: var(--gold); }
+
+    @media(max-width:768px){ 
+        .topbar { flex-direction: column; gap: 15px; } 
+        nav { display: flex; flex-wrap: wrap; justify-content: center; gap: 15px; } 
+        nav a { margin: 0; }
+        .contact-wrapper { grid-template-columns: 1fr; margin-top: 30px; }
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <div class="container topbar">
+      <a href="index.html" class="logo-img">
+        <img src="9227.jpg" alt="HARKEIN SYNERGIES">
+      </a>
+      <nav>
+        <a href="index.html">Home</a>
+        <a href="about.html">About Us</a>
+        <a href="index.html#divisions">Sectors</a>
+        <a href="procurement.html">Procurement</a>
+        <a href="contact.html" class="nav-btn">Contact Us</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <div class="page-hero">
+        <div class="hero-text">
+            <h1>GET IN TOUCH</h1>
+            <p>We are ready to partner with you.</p>
+        </div>
+    </div>
+
+    <section class="container">
+        <div class="contact-wrapper">
+            <div class="contact-info-box">
+                <h3>📍 Headquarters</h3>
+                <p><strong>Harkein Synergies Ltd.</strong><br>Osun State, Nigeria.</p>
+                
+                <div style="width: 100%; height: 1px; background: rgba(255,255,255,0.2); margin: 20px 0;"></div>
+                
+                <h3>📞 Direct Lines</h3>
+                <p>For urgent inquiries, please call or WhatsApp:</p>
+                <p style="font-size: 18px; font-weight: bold; color: var(--gold);">+234 902 682 4546</p>
+                
+                <div style="width: 100%; height: 1px; background: rgba(255,255,255,0.2); margin: 20px 0;"></div>
+
+                <h3>📧 Electronic Mail</h3>
+                <p>infoharkein@gmail.com</p>
+            </div>
+
+            <form id="contactForm" action="https://formspree.io/f/movpgwpy" method="POST" class="contact-form">
+              <h3 style="margin-top: 0; color: var(--navy);">Send us a Message</h3>
+              
+              <label for="name">Full Name / Company Name</label>
+              <input type="text" id="name" name="name" placeholder="Enter name" required>
+
+              <label for="department">Department of Interest</label>
+              <select name="department">
+                  <option value="General">General Inquiry</option>
+                  <option value="Procurement">General Merchandise/Contracts</option>
+                  <option value="Real Estate">Real Estate</option>
+                  <option value="Fashion">Fashion</option>
+                  <option value="Logistics">Logistics</option>
+              </select>
+
+              <label for="email">Email Address</label>
+              <input type="email" id="email" name="_replyto" placeholder="Enter email" required>
+
+              <label for="message">Message</label>
+              <textarea id="message" name="message" rows="5" placeholder="How can we help you?" required></textarea>
+
+              <button type="submit">Send Message</button>
+            </form>
+        </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container footer-content">
+        <div class="footer-col">
+            <h4>Harkein Synergies</h4>
+            <p>A multi-sector conglomerate dedicated to excellence.</p>
+        </div>
+        <div class="footer-col">
+            <h4>Corporate</h4>
+            <ul>
+                <li><a href="about.html">About Us</a></li>
+                <li><a href="procurement.html">General Trading</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </div>
+        <div class="footer-col">
+            <h4>Divisions</h4>
+            <ul>
+                <li><a href="properties.html">Properties</a></li>
+                <li><a href="fashion.html">Fashion</a></li>
+                <li><a href="contact.html">Logistics</a></li>
+            </ul>
+        </div>
+        <div class="footer-col">
+            <h4>Connect</h4>
+            <p>&copy; 2025 Harkein Synergies.</p>
+            <p style="font-size: 12px; margin-top: 10px;">
+                <a href="privacy.html">Privacy Policy</a> | <a href="terms.html">Terms of Service</a>
+            </p>
+        </div>
+    </div>
+  </footer>
+
+  <script>
+    const form = document.getElementById("contactForm");
+    form.addEventListener("submit", async (e) => {
+      e.preventDefault();
+      const btn = form.querySelector('button');
+      btn.innerText = "Sending...";
+      btn.disabled = true;
+      try {
+          const response = await fetch(form.action, { method: "POST", body: new FormData(form), headers: { "Accept": "application/json" } });
+          if (response.ok) { alert("Message Sent Successfully!"); window.location.href = "index.html"; } 
+          else { alert("Error sending message."); btn.innerText = "Send Message"; btn.disabled = false; }
+      } catch (error) { alert("Network error."); btn.innerText = "Send Message"; btn.disabled = false; }
+    });
+  </script>
+</body>
+</html>
