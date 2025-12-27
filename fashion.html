@@ -7,14 +7,7 @@
   <link rel="icon" href="https://i.ibb.co/RpKv1djv/file-0000000043cc620a9e2842b1759c4eac-conversation-id-681fc7fd-2814-800f-981e-7caabb6ca2dd-message-i.png" type="image/png">
   <style>
     /* SHARED CORPORATE THEME */
-    :root{
-      --navy: #0f172a;       
-      --gold: #d4af37;       
-      --gold-light: #f3e5ab; 
-      --grey: #f8fafc;       
-      --text: #334155;       
-      --white: #ffffff;
-    }
+    :root{ --navy: #0f172a; --gold: #d4af37; --gold-light: #f3e5ab; --grey: #f8fafc; --text: #334155; --white: #ffffff; }
     *{box-sizing:border-box}
     body{font-family: 'Helvetica Neue', 'Segoe UI', Arial, sans-serif; margin:0; background:var(--white); color:var(--text); line-height: 1.6;}
     
@@ -26,67 +19,30 @@
     .logo-text span { color: var(--gold); }
     nav a{color:white; text-decoration:none; margin-left:25px; font-weight:500; font-size: 14px; text-transform: uppercase; letter-spacing: 0.5px; transition: 0.3s;}
     nav a:hover { color: var(--gold); }
-    
-    /* Social Link in Nav */
     .nav-social { color: var(--gold) !important; font-weight: 700; border-bottom: 1px solid transparent; }
     .nav-social:hover { border-bottom: 1px solid var(--gold); }
-
     .nav-btn { border: 1px solid var(--gold); padding: 8px 16px; border-radius: 4px; color: var(--gold) !important; }
     .nav-btn:hover { background: var(--gold); color: var(--navy) !important; }
 
-    /* FASHION HERO */
-    .page-hero {
-        height: 60vh;
-        background-image: url('https://images.unsplash.com/photo-1490481651871-61109968a3fb?auto=format&fit=crop&w=1600&q=80');
-        background-size: cover;
-        background-position: center;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        position: relative;
-    }
+    /* HERO */
+    .page-hero { height: 60vh; background-image: url('https://images.unsplash.com/photo-1490481651871-61109968a3fb?auto=format&fit=crop&w=1600&q=80'); background-size: cover; background-position: center; display: flex; align-items: center; justify-content: center; position: relative; }
     .page-hero::after { content:''; position:absolute; inset:0; background: rgba(15,23,42,0.5); }
     .hero-text { position: relative; z-index: 2; text-align: center; color: white; }
     .hero-text h1 { font-size: 48px; margin: 0; font-weight: 800; letter-spacing: 2px; }
     .hero-text p { font-size: 18px; color: var(--gold); text-transform: uppercase; letter-spacing: 1px; margin-top: 10px; }
     .hero-btn { display: inline-block; margin-top: 20px; padding: 10px 25px; background: var(--gold); color: var(--navy); text-decoration: none; font-weight: 700; border-radius: 4px; }
 
-    /* PRODUCT GRID */
+    /* GRID */
     section { padding: 80px 0; }
     .grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 30px; }
-    
-    .product-card {
-        background: white;
-        border: 1px solid #e2e8f0;
-        transition: 0.3s;
-        border-radius: 8px;
-        overflow: hidden;
-    }
-    .product-card:hover {
-        box-shadow: 0 10px 30px rgba(0,0,0,0.1);
-        transform: translateY(-5px);
-    }
-    .product-img {
-        height: 350px;
-        width: 100%;
-        object-fit: cover;
-    }
+    .product-card { background: white; border: 1px solid #e2e8f0; transition: 0.3s; border-radius: 8px; overflow: hidden; }
+    .product-card:hover { box-shadow: 0 10px 30px rgba(0,0,0,0.1); transform: translateY(-5px); }
+    .product-img { height: 350px; width: 100%; object-fit: cover; }
     .product-details { padding: 20px; text-align: center; }
     .product-cat { color: var(--gold); font-size: 12px; font-weight: 700; text-transform: uppercase; letter-spacing: 1px; }
     .product-title { color: var(--navy); font-size: 18px; margin: 5px 0 10px; font-weight: 600; }
     .product-price { color: var(--text); font-weight: 400; margin-bottom: 15px; }
-    .btn-buy {
-        display: inline-block;
-        padding: 10px 20px;
-        background: var(--navy);
-        color: white;
-        text-decoration: none;
-        font-size: 13px;
-        text-transform: uppercase;
-        letter-spacing: 1px;
-        transition: 0.3s;
-        border-radius: 4px;
-    }
+    .btn-buy { display: inline-block; padding: 10px 20px; background: var(--navy); color: white; text-decoration: none; font-size: 13px; text-transform: uppercase; letter-spacing: 1px; transition: 0.3s; border-radius: 4px; }
     .btn-buy:hover { background: var(--gold); color: var(--navy); }
 
     /* FOOTER */
@@ -97,14 +53,8 @@
     .footer-col ul li { margin-bottom: 10px; }
     .footer-col a { color: rgba(255,255,255,0.6); text-decoration: none; transition: 0.3s; }
     .footer-col a:hover { color: var(--gold); }
-
-    /* RESPONSIVE */
-    @media(max-width:768px){ 
-        .topbar { flex-direction: column; gap: 15px; }
-        nav { display: flex; flex-wrap: wrap; justify-content: center; gap: 15px; }
-        nav a { margin: 0; }
-        .page-hero h1 { font-size: 32px; }
-    }
+    
+    @media(max-width:768px){ .topbar { flex-direction: column; gap: 15px; } nav { display: flex; flex-wrap: wrap; justify-content: center; gap: 15px; } nav a { margin: 0; } }
   </style>
 </head>
 <body>
@@ -115,7 +65,7 @@
       <nav>
         <a href="index.html">Home</a>
         <a href="index.html#divisions">Our Businesses</a>
-        <a href="https://instagram.com/harkein_ein" target="_blank" class="nav-social">INSTAGRAM</a>
+        <a href="https://instagram.com/harkein_synergies" target="_blank" class="nav-social">INSTAGRAM</a>
         <a href="index.html#contact" class="nav-btn">Contact Us</a>
       </nav>
     </div>
@@ -126,7 +76,7 @@
         <div class="hero-text">
             <h1>HARKEIN FASHION</h1>
             <p>Timeless Elegance. Modern Design.</p>
-            <a href="https://instagram.com/harkein_ein" target="_blank" class="hero-btn">Follow our Collection</a>
+            <a href="https://instagram.com/harkein_synergies" target="_blank" class="hero-btn">Follow our Collection</a>
         </div>
     </div>
 
@@ -137,6 +87,7 @@
         </div>
 
         <div class="grid">
+            
             <div class="product-card">
                 <img src="https://images.unsplash.com/photo-1594938298603-c8148c4dae35?auto=format&fit=crop&w=800&q=80" alt="Silk Dress" class="product-img">
                 <div class="product-details">
@@ -157,28 +108,8 @@
                 </div>
             </div>
 
-            <div class="product-card">
-                <img src="https://images.unsplash.com/photo-1584917865442-de89df76afd3?auto=format&fit=crop&w=800&q=80" alt="Leather Bag" class="product-img">
-                <div class="product-details">
-                    <div class="product-cat">Accessories</div>
-                    <div class="product-title">Handcrafted Leather Bag</div>
-                    <div class="product-price">₦35,000</div>
-                    <a href="https://wa.me/2347065917831?text=I%20am%20interested%20in%20the%20Leather%20Bag" class="btn-buy">Order via WhatsApp</a>
-                </div>
-            </div>
-
-            <div class="product-card">
-                <img src="https://images.unsplash.com/photo-1591561954557-26941169b49e?auto=format&fit=crop&w=800&q=80" alt="Classic Watch" class="product-img">
-                <div class="product-details">
-                    <div class="product-cat">Accessories</div>
-                    <div class="product-title">Classic Gold Timepiece</div>
-                    <div class="product-price">₦85,000</div>
-                    <a href="https://wa.me/2347065917831?text=I%20am%20interested%20in%20the%20Gold%20Timepiece" class="btn-buy">Order via WhatsApp</a>
-                </div>
-            </div>
         </div>
     </section>
-
   </main>
 
   <footer>
@@ -197,8 +128,8 @@
         </div>
         <div class="footer-col">
             <h4>Connect</h4>
-            <p>Instagram: <a href="https://instagram.com/harkein_ein" target="_blank" style="color:var(--gold)">@harkein_ein</a></p>
-            <p>Email: <a href="mailto:folaranmihussein@gmail.com">folaranmihussein@gmail.com</a></p>
+            <p>Instagram: <a href="https://instagram.com/harkein_synergies" target="_blank" style="color:var(--gold)">@harkein_synergies</a></p>
+            <p>Email: <a href="mailto:infoharkein@gmail.com">infoharkein@gmail.com</a></p>
         </div>
         <div class="footer-col">
             <h4>Legal</h4>
@@ -206,6 +137,5 @@
         </div>
     </div>
   </footer>
-
 </body>
 </html>
