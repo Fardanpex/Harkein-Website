@@ -18,19 +18,18 @@
     *{box-sizing:border-box}
     body{font-family: 'Helvetica Neue', 'Segoe UI', Arial, sans-serif; margin:0; background:var(--white); color:var(--text); line-height: 1.6;}
     
-    /* STICKY HEADER */
+    /* HEADER */
     header{background: rgba(15, 23, 42, 0.98); backdrop-filter: blur(10px); color:white; position:sticky; top:0; z-index:1000; border-bottom: 3px solid var(--gold);}
     .container{max-width:1200px; margin:0 auto; padding:0 20px;}
     .topbar{display:flex; align-items:center; justify-content:space-between; padding:15px 0;}
-    .logo-text { font-size: 24px; font-weight: 800; color: white; text-transform: uppercase; letter-spacing: 1px; text-decoration: none;}
-    .logo-text span { color: var(--gold); }
     
-        /* NEW LOGO STYLES */
+    /* LOGO STYLES */
     .logo-img img {
-      height: 50px;       /* Sets the logo size */
-      width: auto;        /* Keeps the shape correct */
-      border-radius: 4px; /* Slight curve on corners */
+      height: 45px;
+      width: auto;
+      border-radius: 4px;
       border: 2px solid var(--gold);
+      margin-top: 5px;
     }
     
     nav a{color:white; text-decoration:none; margin-left:25px; font-weight:500; font-size: 14px; text-transform: uppercase; letter-spacing: 0.5px; transition: 0.3s;}
@@ -42,7 +41,7 @@
     .hero{position:relative; overflow:hidden; height: 85vh; color: white;}
     .slides{display:flex; transition:transform 0.7s cubic-bezier(0.25, 1, 0.5, 1); height: 100%;}
     .slide{min-width:100%; height:100%; background-size:cover; background-position:center; display:flex; align-items:center; justify-content: center; position: relative;}
-    .slide::after { content:''; position:absolute; inset:0; background: linear-gradient(90deg, rgba(15,23,42,0.8) 0%, rgba(15,23,42,0.4) 100%); }
+    .slide::after { content:''; position:absolute; inset:0; background: linear-gradient(90deg, rgba(15,23,42,0.9) 0%, rgba(15,23,42,0.4) 100%); }
     
     .hero-content { position: relative; z-index: 2; text-align: center; max-width: 800px; padding: 20px; animation: fadeIn 1s ease-out; }
     .hero h1{font-size:56px; margin:0 0 15px; letter-spacing:-1px; font-weight: 800; line-height: 1.1;}
@@ -54,43 +53,40 @@
 
     @keyframes fadeIn { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: translateY(0); } }
 
-    /* STATS BAR */
-    .stats-bar { background: var(--navy); color: white; padding: 40px 0; border-bottom: 1px solid rgba(255,255,255,0.1); }
-    .stats-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); text-align: center; gap: 20px; }
-    .stat-item h3 { font-size: 36px; color: var(--gold); margin: 0; font-weight: 800; }
-    .stat-item p { margin: 5px 0 0; font-size: 14px; opacity: 0.8; text-transform: uppercase; letter-spacing: 1px; }
-
-    /* DIVISIONS SECTION */
+    /* SECTIONS */
     section{padding:100px 0;}
     .section-header { text-align: center; margin-bottom: 60px; }
     .section-header h2 { font-size: 36px; color: var(--navy); margin-bottom: 10px; }
     .section-header .line { width: 60px; height: 4px; background: var(--gold); margin: 0 auto; }
 
+    /* ABOUT & VISION */
+    .about-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 50px; align-items: center; }
+    .vision-box { background: var(--navy); color: white; padding: 40px; border-radius: 8px; border-left: 5px solid var(--gold); margin-bottom: 20px; }
+    .vision-box h3 { margin-top: 0; color: var(--gold); }
+
+    /* LEADERSHIP */
+    .team-card { background: white; border: 1px solid #e2e8f0; border-radius: 8px; overflow: hidden; max-width: 350px; margin: 0 auto; box-shadow: 0 10px 20px rgba(0,0,0,0.05); }
+    .team-img { width: 100%; height: 350px; object-fit: cover; background: #ddd; } /* Placeholder color */
+    .team-info { padding: 20px; text-align: center; }
+    .team-role { color: var(--gold); font-weight: 700; font-size: 12px; text-transform: uppercase; letter-spacing: 1px; }
+
+    /* DIVISIONS GRID */
     .grid{display:grid; grid-template-columns:repeat(auto-fit,minmax(300px,1fr)); gap:30px;}
-    
-    .division-card { position: relative; height: 400px; border-radius: 8px; overflow: hidden; group: cursor-pointer; box-shadow: 0 10px 30px rgba(0,0,0,0.1); }
+    .division-card { position: relative; height: 350px; border-radius: 8px; overflow: hidden; group: cursor-pointer; box-shadow: 0 10px 30px rgba(0,0,0,0.1); }
     .division-card img { width: 100%; height: 100%; object-fit: cover; transition: transform 0.6s; }
     .division-card:hover img { transform: scale(1.1); }
-    .division-overlay { position: absolute; inset: 0; background: linear-gradient(0deg, rgba(15,23,42,0.9) 0%, rgba(15,23,42,0) 60%); display: flex; flex-direction: column; justify-content: flex-end; padding: 30px; }
+    .division-overlay { position: absolute; inset: 0; background: linear-gradient(0deg, rgba(15,23,42,0.95) 0%, rgba(15,23,42,0) 60%); display: flex; flex-direction: column; justify-content: flex-end; padding: 30px; }
     .division-overlay h3 { color: white; font-size: 24px; margin: 0 0 10px; }
     .division-overlay p { color: rgba(255,255,255,0.8); margin: 0 0 20px; font-size: 15px; }
     .division-link { color: var(--gold); text-decoration: none; font-weight: 700; text-transform: uppercase; font-size: 13px; letter-spacing: 1px; }
 
-    /* LOGISTICS SECTION */
-    .logistics-section { background: var(--grey); }
-    .service-row { display: flex; align-items: center; gap: 40px; margin-bottom: 40px; }
-    .service-row:nth-child(even) { flex-direction: row-reverse; }
-    .service-text { flex: 1; }
-    .service-text h3 { color: var(--navy); font-size: 24px; margin-bottom: 15px; }
-    .service-img { flex: 1; border-radius: 8px; overflow: hidden; box-shadow: 0 10px 20px rgba(0,0,0,0.1); }
-    .service-img img { width: 100%; display: block; }
+    /* GENERAL TRADING */
+    .trading-item { background: white; padding: 30px; border-radius: 8px; border-left: 4px solid var(--gold); box-shadow: 0 4px 12px rgba(0,0,0,0.05); }
 
     /* CONTACT SECTION */
     .contact-section { background: var(--navy); color: white; }
-    .contact-section h2 { color: white; }
     .contact-form { max-width: 600px; margin: 0 auto; background: white; padding: 40px; border-radius: 8px; box-shadow: 0 20px 40px rgba(0,0,0,0.2); }
     input, textarea, select { width: 100%; padding: 15px; border: 1px solid #e2e8f0; border-radius: 4px; margin-bottom: 15px; font-family: inherit; background: #f8fafc; }
-    input:focus, textarea:focus { border-color: var(--navy); outline: none; background: white; }
     button[type=submit] { background: var(--navy); color: white; border: none; padding: 15px 30px; border-radius: 4px; font-weight: 800; cursor: pointer; width: 100%; transition: 0.3s; }
     button[type=submit]:hover { background: var(--gold); color: var(--navy); }
     .contact-info { text-align: center; margin-top: 30px; color: rgba(255,255,255,0.7); }
@@ -105,10 +101,9 @@
     .footer-col a { color: rgba(255,255,255,0.6); text-decoration: none; transition: 0.3s; }
     .footer-col a:hover { color: var(--gold); }
 
-    /* RESPONSIVE */
     @media(max-width:768px){ 
         .hero h1{font-size:36px} 
-        .service-row { flex-direction: column !important; }
+        .about-grid { grid-template-columns: 1fr; }
         .topbar { flex-direction: column; gap: 15px; }
         nav { display: flex; flex-wrap: wrap; justify-content: center; gap: 15px; }
         nav a { margin: 0; }
@@ -120,14 +115,12 @@
   <header>
     <div class="container topbar">
       <a href="index.html" class="logo-img">
-  <img src="9227.jpg" alt="HARKEIN SYNERGIES">
-</a>
-
+        <img src="9227.jpg" alt="HARKEIN SYNERGIES">
+      </a>
       <nav>
-        <a href="index.html">Home</a>
         <a href="#about">About Us</a>
-        <a href="#divisions">Our Businesses</a>
-        <a href="#logistics">Logistics</a>
+        <a href="#divisions">Sectors</a>
+        <a href="#trading">Procurement</a>
         <a href="#contact" class="nav-btn">Contact Us</a>
       </nav>
     </div>
@@ -136,114 +129,121 @@
   <main>
     <section id="home" class="hero" style="padding: 0;">
       <div class="slides">
-        <div class="slide" style="background-image:url('https://images.unsplash.com/photo-1494412574643-35d324688133?auto=format&fit=crop&w=1600&q=80')">
-            <div class="hero-content">
-                <h1>Bridging Global Markets</h1>
-                <p>Advanced Logistics, Import/Export, and Trade Solutions.</p>
-                <a class="btn btn-primary" href="#logistics">Explore Logistics</a>
-            </div>
-        </div>
         <div class="slide" style="background-image:url('https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&w=1600&q=80')">
             <div class="hero-content">
-                <h1>Premium Real Estate</h1>
-                <p>Developing the future of residential and commercial living.</p>
-                <a class="btn btn-primary" href="properties.html">View Properties</a>
-            </div>
-        </div>
-        <div class="slide" style="background-image:url('https://images.unsplash.com/photo-1441986300917-64674bd600d8?auto=format&fit=crop&w=1600&q=80')">
-            <div class="hero-content">
-                <h1>Luxury & Lifestyle</h1>
-                <p>Curating timeless fashion for the modern individual.</p>
-                <a class="btn btn-primary" href="fashion.html">Shop Fashion</a>
+                <h1>HARKEIN SYNERGIES</h1>
+                <p>Innovation for a Connected World.</p>
+                <a class="btn btn-primary" href="#about">Our Corporate Profile</a>
             </div>
         </div>
       </div>
     </section>
 
-    <div class="stats-bar">
-        <div class="container stats-grid">
-            <div class="stat-item">
-                <h3>3</h3>
-                <p>Key Sectors</p>
+    <section id="about" class="container">
+        <div class="about-grid">
+            <div>
+                <h2 style="color: var(--navy); margin-top: 0;">Our Story</h2>
+                <div style="width: 50px; height: 3px; background: var(--gold); margin-bottom: 20px;"></div>
+                <p>Harkein Synergies was established with a singular mandate: to bridge the gap between quality, efficiency, and global standards in the Nigerian market.</p>
+                <p>Starting as a focused trading entity, we have evolved into a dynamic conglomerate with diversified interests in Real Estate Development, High-End Fashion, and Global Logistics.</p>
+                <p>Today, Harkein Synergies stands as a beacon of reliability, leveraging international partnerships to deliver value across multiple sectors.</p>
             </div>
-            <div class="stat-item">
-                <h3>Global</h3>
-                <p>Shipping Network</p>
-            </div>
-            <div class="stat-item">
-                <h3>100%</h3>
-                <p>Quality Assurance</p>
+            
+            <div>
+                <div class="vision-box">
+                    <h3>🎯 Our Mission</h3>
+                    <p>To provide seamless, high-value solutions in real estate, fashion, and general trade by combining integrity, innovation, and operational excellence.</p>
+                </div>
+                <div class="vision-box">
+                    <h3>👁️ Our Vision</h3>
+                    <p>To be the leading multi-sector conglomerate in Nigeria, recognized globally for quality service and sustainable business practices.</p>
+                </div>
             </div>
         </div>
-    </div>
+    </section>
+
+    <section class="container" style="background: #f8fafc; padding: 80px 20px; text-align: center;">
+        <div class="section-header">
+            <h2>Leadership</h2>
+            <div class="line"></div>
+            <p>Driven by visionaries committed to excellence.</p>
+        </div>
+
+        <div class="team-card">
+            <img src="https://images.unsplash.com/photo-1560250097-0b93528c311a?auto=format&fit=crop&w=800&q=80" alt="CEO" class="team-img">
+            <div class="team-info">
+                <h3 style="margin: 0; color: var(--navy);">Folaranmi Hussein</h3>
+                <div class="team-role">Chief Executive Officer</div>
+                <p style="font-size: 14px; color: #666; margin-top: 10px;">
+                    A visionary leader with deep expertise in international trade and business development, overseeing the strategic direction of Harkein Synergies.
+                </p>
+            </div>
+        </div>
+    </section>
 
     <section id="divisions" class="container">
       <div class="section-header">
-        <h2>Our Business Divisions</h2>
+        <h2>Our Core Sectors</h2>
         <div class="line"></div>
-        <p style="margin-top: 15px; color: #666;">Harkein Synergies operates across three core verticals.</p>
       </div>
 
       <div class="grid">
         <div class="division-card">
-            <img src="https://images.unsplash.com/photo-1578575437130-527eed3abbec?auto=format&fit=crop&w=800&q=80" alt="Shipping Containers">
+            <img src="https://images.unsplash.com/photo-1483985988355-763728e1935b?auto=format&fit=crop&w=800&q=80" alt="Fashion">
             <div class="division-overlay">
-                <h3>Global Logistics</h3>
-                <p>Port operations, freight forwarding, and international trade solutions.</p>
-                <a href="#logistics" class="division-link">Explore Services →</a>
+                <h3>Harkein Fashion</h3>
+                <p>Luxury retail and bespoke tailoring.</p>
+                <a href="fashion.html" class="division-link">Visit Store →</a>
             </div>
         </div>
 
         <div class="division-card">
-            <img src="https://images.unsplash.com/photo-1512917774080-9991f1c4c750?auto=format&fit=crop&w=800&q=80" alt="Luxury Villa">
+            <img src="https://images.unsplash.com/photo-1512917774080-9991f1c4c750?auto=format&fit=crop&w=800&q=80" alt="Properties">
             <div class="division-overlay">
                 <h3>Harkein Properties</h3>
-                <p>Luxury residential properties and commercial estate management.</p>
+                <p>Residential and commercial development.</p>
                 <a href="properties.html" class="division-link">View Listings →</a>
             </div>
         </div>
 
         <div class="division-card">
-            <img src="https://images.unsplash.com/photo-1483985988355-763728e1935b?auto=format&fit=crop&w=800&q=80" alt="Fashion Model">
+            <img src="https://images.unsplash.com/photo-1578575437130-527eed3abbec?auto=format&fit=crop&w=800&q=80" alt="Logistics">
             <div class="division-overlay">
-                <h3>Harkein Fashion</h3>
-                <p>High-end fashion retail and bespoke tailoring services.</p>
-                <a href="fashion.html" class="division-link">Visit Store →</a>
+                <h3>Global Logistics</h3>
+                <p>Freight forwarding and port operations.</p>
+                <a href="#contact" class="division-link">Contact Dept →</a>
             </div>
         </div>
       </div>
     </section>
 
-    <section id="logistics" class="logistics-section">
-        <div class="container">
-            <div class="section-header">
-                <h2>Logistics & Trade Solutions</h2>
-                <div class="line"></div>
-            </div>
+    <section id="trading" class="container" style="background: #f8fafc;">
+        <div class="section-header">
+            <h2>General Trading & Procurement</h2>
+            <div class="line"></div>
+            <p style="margin-top: 15px; max-width: 700px; margin-left: auto; margin-right: auto;">
+                Beyond our core sectors, Harkein Synergies serves as a trusted general contractor and procurement partner for government and private institutions.
+            </p>
+        </div>
 
-            <div class="service-row">
-                <div class="service-text">
-                    <h3>Port Operations & Clearance</h3>
-                    <p>We handle the complexities of port logistics, ensuring your goods are cleared and moved efficiently. From documentation to terminal handling, Harkein Synergies ensures seamless entry for your cargo.</p>
-                    <ul>
-                        <li>Customs Documentation</li>
-                        <li>Terminal Handling</li>
-                        <li>Cargo Inspection</li>
-                    </ul>
-                </div>
-                <div class="service-img">
-                    <img src="https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?auto=format&fit=crop&w=800&q=80" alt="Port Crane">
-                </div>
+        <div class="grid">
+            <div class="trading-item">
+                <h3 style="color: var(--navy); margin-top: 0;">📦 General Contracts</h3>
+                <p style="font-size: 14px; color: #666;">
+                    Supply of general merchandise, office equipment, and industrial tools. We ensure quality delivery on tight deadlines.
+                </p>
             </div>
-
-            <div class="service-row">
-                <div class="service-text">
-                    <h3>Freight Forwarding & Shipping</h3>
-                    <p>Whether by sea or air, we manage the transportation of goods across borders. Our network of global partners allows us to offer competitive rates and reliable delivery timelines.</p>
-                </div>
-                <div class="service-img">
-                    <img src="https://images.unsplash.com/photo-1495112398151-7eedd7c2e7e8?auto=format&fit=crop&w=800&q=80" alt="Cargo Ship">
-                </div>
+            <div class="trading-item">
+                <h3 style="color: var(--navy); margin-top: 0;">🏗️ Project Procurement</h3>
+                <p style="font-size: 14px; color: #666;">
+                    Sourcing construction materials and heavy machinery for large-scale development projects.
+                </p>
+            </div>
+            <div class="trading-item">
+                <h3 style="color: var(--navy); margin-top: 0;">🤝 Import Consultancy</h3>
+                <p style="font-size: 14px; color: #666;">
+                    Guiding clients through international trade laws, customs documentation, and supplier verification.
+                </p>
             </div>
         </div>
     </section>
@@ -253,7 +253,7 @@
         <div class="section-header">
             <h2 style="color: white;">Partner With Us</h2>
             <div class="line" style="background: white;"></div>
-            <p style="margin-top: 15px; opacity: 0.8;">Contact our headquarters for inquiries regarding Real Estate, Fashion, or Logistics.</p>
+            <p style="margin-top: 15px; opacity: 0.8;">Headquarters</p>
         </div>
 
         <form id="contactForm" action="https://formspree.io/f/movpgwpy" method="POST" class="contact-form">
@@ -263,7 +263,7 @@
           <label for="department">Department of Interest</label>
           <select name="department">
               <option value="General">General Inquiry</option>
-              <option value="Logistics">Logistics & Shipping</option>
+              <option value="Procurement">General Merchandise/Contracts</option>
               <option value="Real Estate">Real Estate</option>
               <option value="Fashion">Fashion</option>
           </select>
@@ -293,19 +293,19 @@
             <p>A multi-sector conglomerate dedicated to excellence in Logistics, Real Estate, and Fashion.</p>
         </div>
         <div class="footer-col">
-            <h4>Our Sectors</h4>
+            <h4>Corporate</h4>
             <ul>
-                <li><a href="#logistics">Global Logistics</a></li>
-                <li><a href="properties.html">Real Estate</a></li>
-                <li><a href="fashion.html">Fashion & Retail</a></li>
+                <li><a href="#about">About Us</a></li>
+                <li><a href="#trading">General Trading</a></li>
+                <li><a href="#contact">Contact</a></li>
             </ul>
         </div>
         <div class="footer-col">
-            <h4>Quick Links</h4>
+            <h4>Divisions</h4>
             <ul>
-                <li><a href="#">About Us</a></li>
-                <li><a href="#">Careers</a></li>
-                <li><a href="#contact">Contact</a></li>
+                <li><a href="properties.html">Properties</a></li>
+                <li><a href="fashion.html">Fashion</a></li>
+                <li><a href="#contact">Logistics</a></li>
             </ul>
         </div>
         <div class="footer-col">
@@ -320,47 +320,21 @@
     const slides = document.querySelectorAll('.slide');
     const slidesContainer = document.querySelector('.slides');
     let index = 0;
-    
-    function showSlide(i){ 
-        slidesContainer.style.transform = 'translateX(' + (-100 * i) + '%)'; 
-    }
-    
-    // Auto-play (every 6 seconds)
-    setInterval(()=>{ 
-        index = (index+1)%slides.length; 
-        showSlide(index); 
-    }, 6000);
+    function showSlide(i){ slidesContainer.style.transform = 'translateX(' + (-100 * i) + '%)'; }
+    setInterval(()=>{ index = (index+1)%slides.length; showSlide(index); }, 6000);
 
     // Form Logic
     const form = document.getElementById("contactForm");
     form.addEventListener("submit", async (e) => {
       e.preventDefault();
-      const data = new FormData(form);
       const btn = form.querySelector('button');
-      const originalText = btn.innerText;
-      
       btn.innerText = "Sending...";
       btn.disabled = true;
-
       try {
-          const response = await fetch(form.action, {
-            method: "POST",
-            body: data,
-            headers: { "Accept": "application/json" }
-          });
-
-          if (response.ok) {
-            window.location.href = "thankyou.html";
-          } else {
-            alert("⚠️ There was an issue sending your message. Please try again.");
-            btn.innerText = originalText;
-            btn.disabled = false;
-          }
-      } catch (error) {
-          alert("⚠️ Network error. Please try again.");
-          btn.innerText = originalText;
-          btn.disabled = false;
-      }
+          const response = await fetch(form.action, { method: "POST", body: new FormData(form), headers: { "Accept": "application/json" } });
+          if (response.ok) { window.location.href = "thankyou.html"; } 
+          else { alert("Error sending message."); btn.innerText = "Send Message"; btn.disabled = false; }
+      } catch (error) { alert("Network error."); btn.innerText = "Send Message"; btn.disabled = false; }
     });
 
     // Smooth Scrolling
